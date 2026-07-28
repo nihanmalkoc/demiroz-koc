@@ -98,9 +98,9 @@ Toplam ~13 MB. Daha da küçültmek isterseniz WebP'ye çevirmek boyutu yarıya 
 - **Ekip fotoğrafları** — `assets/img/team-01.svg`, `team-02.svg` soyut yer tutucu.
 - **Ödüller ve istatistikler** — `studyo.html` içindeki dört ödül satırı ve
   sayılar (2018 kuruluş, 46+, 9, 4) tamamen uydurma.
-- **E-posta, telefon, adres** — `info@demirozkoc.com`, `+90 312 123 45 67`,
-  Cinnah Cad. adresi. Altı HTML dosyasının footer'ında ve `iletisim.html` içinde.
-  Şehir (Ankara) doğru, geri kalan bilgiler yer tutucu.
+- **Açık adres** — `iletisim.html` içindeki "Cinnah Cad. No. 00, Kat 3, Çankaya"
+  yer tutucudur. Şehir (Ankara) doğru, sokak/numara uydurma.
+  (E-posta `info@demirozkoc.com` ve telefon `+90 546 467 76 96` gerçek.)
 - **Harita** — `iletisim.html` içindeki OpenStreetMap `bbox` şu an Çankaya/Ankara'yı
   gösteriyor; gerçek adrese göre ince ayar gerekiyor.
 
