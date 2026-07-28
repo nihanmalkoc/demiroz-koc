@@ -1,0 +1,10 @@
+# Ham kaynak dosyalar - siteye dahil degil, repoya girmesin (~250 MB)
+VERI/
+
+# Yerel onizleme paketi
+_paylas/
+
+# Isletim sistemi
+Thumbs.db
+.DS_Store
+desktop.ini

@@ -1,0 +1,47 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' width='1600' height='900' role='img' aria-label='Placeholder'>
+<defs>
+<linearGradient id='bg' x1='0.1' y1='0' x2='0.4' y2='1'><stop offset='0' stop-color='#F1F1EE'/><stop offset='1' stop-color='#D4D4CF'/></linearGradient>
+<linearGradient id='vig' x1='0' y1='1' x2='0.15' y2='0'><stop offset='0' stop-color='#0C0C0D' stop-opacity='0.16'/><stop offset='0.72' stop-color='#0C0C0D' stop-opacity='0'/></linearGradient>
+<linearGradient id='rake' x1='0' y1='0' x2='1' y2='0.35'><stop offset='0' stop-color='#FFFFFF' stop-opacity='0.10'/><stop offset='0.5' stop-color='#FFFFFF' stop-opacity='0'/></linearGradient>
+<filter id='grain'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' seed='1311'/><feColorMatrix type='saturate' values='0'/></filter>
+</defs>
+<rect width='1600' height='900' fill='url(#bg)'/>
+<rect x='-125' y='664' width='317' height='236' fill='#0C0C0D' opacity='0.035'/>
+<rect x='202' y='637' width='193' height='263' fill='#0C0C0D' opacity='0.035'/>
+<rect x='399' y='656' width='208' height='244' fill='#0C0C0D' opacity='0.035'/>
+<rect x='643' y='436' width='207' height='464' fill='#0C0C0D' opacity='0.035'/>
+<rect x='900' y='528' width='328' height='372' fill='#0C0C0D' opacity='0.035'/>
+<rect x='1270' y='482' width='465' height='418' fill='#0C0C0D' opacity='0.035'/>
+<rect x='-41' y='156' width='505' height='744' fill='#0C0C0D' opacity='0.054'/>
+<line x1='149' y1='156' x2='149' y2='900' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<rect x='339' y='-74' width='585' height='974' fill='#0C0C0D' opacity='0.08'/>
+<line x1='339' y1='60' x2='924' y2='60' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='120' x2='924' y2='120' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='180' x2='924' y2='180' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='240' x2='924' y2='240' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='300' x2='924' y2='300' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='360' x2='924' y2='360' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='420' x2='924' y2='420' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='480' x2='924' y2='480' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='540' x2='924' y2='540' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='600' x2='924' y2='600' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='660' x2='924' y2='660' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='720' x2='924' y2='720' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='780' x2='924' y2='780' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='339' y1='840' x2='924' y2='840' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='617' y1='0' x2='617' y2='900' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<rect x='840' y='-21' width='734' height='921' fill='#0C0C0D' opacity='0.195'/>
+<line x1='1305' y1='0' x2='1305' y2='900' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<rect x='1537' y='447' width='571' height='453' fill='#0C0C0D' opacity='0.103'/>
+<line x1='1537' y1='536' x2='2108' y2='536' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='1537' y1='625' x2='2108' y2='625' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='1537' y1='714' x2='2108' y2='714' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='1537' y1='803' x2='2108' y2='803' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<line x1='1537' y1='892' x2='2108' y2='892' stroke='#0C0C0D' stroke-opacity='0.11' stroke-width='1'/>
+<polygon points='0,661 1600,670 1600,900 0,900' fill='#0C0C0D' opacity='0.239'/>
+<circle cx='1262' cy='146' r='104' fill='none' stroke='#0C0C0D' stroke-opacity='0.28' stroke-width='1'/>
+<polygon points='65,0 358,0 179,900 16,900' fill='#FFFFFF' opacity='0.05'/>
+<rect width='1600' height='900' fill='url(#rake)'/>
+<rect width='1600' height='900' fill='url(#vig)'/>
+<rect width='1600' height='900' filter='url(#grain)' opacity='0.04'/>
+</svg>

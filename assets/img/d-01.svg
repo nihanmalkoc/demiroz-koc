@@ -1,0 +1,42 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1125' width='2000' height='1125' role='img' aria-label='Placeholder'>
+<defs>
+<linearGradient id='bg' x1='0.1' y1='0' x2='0.4' y2='1'><stop offset='0' stop-color='#5C626B'/><stop offset='1' stop-color='#111316'/></linearGradient>
+<linearGradient id='vig' x1='0' y1='1' x2='0.15' y2='0'><stop offset='0' stop-color='#000000' stop-opacity='0.42'/><stop offset='0.72' stop-color='#000000' stop-opacity='0'/></linearGradient>
+<linearGradient id='rake' x1='0' y1='0' x2='1' y2='0.35'><stop offset='0' stop-color='#FFFFFF' stop-opacity='0.10'/><stop offset='0.5' stop-color='#FFFFFF' stop-opacity='0'/></linearGradient>
+<filter id='grain'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' seed='1207'/><feColorMatrix type='saturate' values='0'/></filter>
+</defs>
+<rect width='2000' height='1125' fill='url(#bg)'/>
+<rect x='-58' y='727' width='589' height='398' fill='#000000' opacity='0.21'/>
+<rect x='525' y='758' width='260' height='367' fill='#000000' opacity='0.21'/>
+<rect x='821' y='775' width='590' height='350' fill='#000000' opacity='0.21'/>
+<rect x='1419' y='611' width='410' height='514' fill='#000000' opacity='0.21'/>
+<rect x='1839' y='591' width='367' height='534' fill='#000000' opacity='0.21'/>
+<rect x='-93' y='102' width='557' height='1023' fill='#000000' opacity='0.361'/>
+<line x1='-93' y1='190' x2='464' y2='190' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='-93' y1='278' x2='464' y2='278' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='-93' y1='366' x2='464' y2='366' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='-93' y1='454' x2='464' y2='454' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='-93' y1='542' x2='464' y2='542' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='-93' y1='630' x2='464' y2='630' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='-93' y1='718' x2='464' y2='718' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='-93' y1='806' x2='464' y2='806' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='-93' y1='894' x2='464' y2='894' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='-93' y1='982' x2='464' y2='982' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='-93' y1='1070' x2='464' y2='1070' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='268' y1='102' x2='268' y2='1125' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<rect x='347' y='197' width='735' height='928' fill='#000000' opacity='0.599'/>
+<line x1='689' y1='197' x2='689' y2='1125' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<rect x='961' y='569' width='499' height='556' fill='#000000' opacity='0.323'/>
+<line x1='961' y1='656' x2='1460' y2='656' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='961' y1='743' x2='1460' y2='743' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='961' y1='830' x2='1460' y2='830' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='961' y1='917' x2='1460' y2='917' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='961' y1='1004' x2='1460' y2='1004' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<line x1='961' y1='1091' x2='1460' y2='1091' stroke='#FFFFFF' stroke-opacity='0.13' stroke-width='1'/>
+<polygon points='0,963 2000,947 2000,1125 0,1125' fill='#000000' opacity='0.539'/>
+<circle cx='1329' cy='288' r='134' fill='none' stroke='#FFFFFF' stroke-opacity='0.28' stroke-width='1'/>
+<polygon points='256,0 564,0 282,1125 64,1125' fill='#FFFFFF' opacity='0.05'/>
+<rect width='2000' height='1125' fill='url(#rake)'/>
+<rect width='2000' height='1125' fill='url(#vig)'/>
+<rect width='2000' height='1125' filter='url(#grain)' opacity='0.04'/>
+</svg>
