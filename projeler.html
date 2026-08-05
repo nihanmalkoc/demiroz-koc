@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projeler — Demiröz ✕ Koç</title>
-<meta name="description" content="Demiröz ✕ Koç mimarlık projeleri: konut, ofis, kültür ve konaklama yapıları.">
+<meta name="description" content="Demiröz ✕ Koç mimarlık projeleri: konut, ofis, çok işlevli ve kentsel yapılar.">
 <!-- ONIZLEME: icerik yer tutucu oldugu surece arama motorlarina kapali.
      Yayina cikarken bu satiri SILIN. -->
 <meta name="robots" content="noindex, nofollow">
@@ -61,34 +61,26 @@
 
 <main id="main">
 
-  <section class="page-head shell">
-    <p class="label" data-reveal data-i18n="works.label">Projeler</p>
-    <div class="page-head__row" style="margin-top:1.5rem">
-      <h1 class="h1"><span data-reveal-mask><span data-i18n="works.title">Projeler</span></span></h1>
-      <p class="lede" data-reveal data-reveal-delay="1" data-i18n="works.lede">Tek bir evden karma kullanımlı yapılara kadar, tamamlanmış ve süren işlerden bir seçki.</p>
-    </div>
-  </section>
-
-  <section class="shell" style="padding-bottom:var(--section)">
+  <!-- Sayfa basligi ayri bir bolum degil: "Projeler" filtre satirinin solunda,
+       kategorilerle ayni hizada duruyor. -->
+  <section class="shell" style="padding-top:clamp(7.5rem,18vh,12rem); padding-bottom:var(--section)">
 
     <div class="filters" id="filters" role="group" aria-label="Kategori filtresi">
-      <span class="label" style="margin-right:auto">
-        <span id="workCount">09</span> <span data-i18n="works.count">proje</span>
-      </span>
-      <button type="button" data-filter="all"         aria-pressed="true"  data-i18n="cat.all">Tümü</button>
-      <button type="button" data-filter="housing"     aria-pressed="false" data-i18n="cat.housing">Konut</button>
-      <button type="button" data-filter="office"      aria-pressed="false" data-i18n="cat.office">Ofis</button>
-      <button type="button" data-filter="culture"     aria-pressed="false" data-i18n="cat.culture">Kültür</button>
-      <button type="button" data-filter="hospitality" aria-pressed="false" data-i18n="cat.hospitality">Konaklama</button>
+      <h1 class="label label--ink" style="margin:0 auto 0 0" data-i18n="works.title">Projeler</h1>
+      <button type="button" data-filter="all"     aria-pressed="true"  data-i18n="cat.all">Tümü</button>
+      <button type="button" data-filter="housing" aria-pressed="false" data-i18n="cat.housing">Konut</button>
+      <button type="button" data-filter="office"  aria-pressed="false" data-i18n="cat.office">Ofis</button>
+      <button type="button" data-filter="multi"   aria-pressed="false" data-i18n="cat.multi">Çok İşlevli</button>
+      <button type="button" data-filter="urban"   aria-pressed="false" data-i18n="cat.urban">Kentsel</button>
     </div>
 
     <div class="work-grid" id="workGrid">
 
-      <a class="work" href="zabjelo.html" data-cat="culture" data-reveal>
+      <a class="work" href="zabjelo.html" data-cat="multi" data-reveal>
         <div class="work__media"><img src="assets/img/zabjelo/corner.jpg" alt="Zabjelo Kültür ve Toplum Merkezi" loading="lazy"></div>
         <div class="work__bar">
           <span class="work__title"><span class="num">01</span><span class="h3" data-i18n="z.title">Zabjelo Kültür ve Toplum Merkezi</span></span>
-          <span class="work__tags"><span class="label" data-i18n="cat.culture">Kültür</span><span class="num">2026</span></span>
+          <span class="work__tags"><span class="label" data-i18n="cat.multi">Çok İşlevli</span><span class="num">2026</span></span>
         </div>
       </a>
 
@@ -116,11 +108,11 @@
         </div>
       </a>
 
-      <a class="work" href="proje.html" data-cat="culture" data-reveal>
+      <a class="work" href="proje.html" data-cat="multi" data-reveal>
         <div class="work__media"><img src="assets/img/p-04.svg" alt="Ayvalık Zeytinyağı Fabrikası" loading="lazy"></div>
         <div class="work__bar">
           <span class="work__title"><span class="num">05</span><span class="h3">Ayvalık Zeytinyağı Fabrikası</span></span>
-          <span class="work__tags"><span class="label" data-i18n="cat.culture">Kültür</span><span class="num">2022</span></span>
+          <span class="work__tags"><span class="label" data-i18n="cat.multi">Çok İşlevli</span><span class="num">2022</span></span>
         </div>
       </a>
 
@@ -132,11 +124,11 @@
         </div>
       </a>
 
-      <a class="work" href="proje.html" data-cat="culture" data-reveal data-reveal-delay="2">
+      <a class="work" href="proje.html" data-cat="urban" data-reveal data-reveal-delay="2">
         <div class="work__media"><img src="assets/img/p-06.svg" alt="Kadıköy Kültür Merkezi" loading="lazy"></div>
         <div class="work__bar">
           <span class="work__title"><span class="num">07</span><span class="h3">Kadıköy Kültür Merkezi</span></span>
-          <span class="work__tags"><span class="label" data-i18n="cat.culture">Kültür</span><span class="num">2021</span></span>
+          <span class="work__tags"><span class="label" data-i18n="cat.urban">Kentsel</span><span class="num">2021</span></span>
         </div>
       </a>
 
@@ -148,11 +140,11 @@
         </div>
       </a>
 
-      <a class="work" href="proje.html" data-cat="hospitality" data-reveal data-reveal-delay="1">
+      <a class="work" href="proje.html" data-cat="multi" data-reveal data-reveal-delay="1">
         <div class="work__media"><img src="assets/img/p-08.svg" alt="Alaçatı Butik Otel" loading="lazy"></div>
         <div class="work__bar">
           <span class="work__title"><span class="num">09</span><span class="h3">Alaçatı Butik Otel</span></span>
-          <span class="work__tags"><span class="label" data-i18n="cat.hospitality">Konaklama</span><span class="num">2020</span></span>
+          <span class="work__tags"><span class="label" data-i18n="cat.multi">Çok İşlevli</span><span class="num">2020</span></span>
         </div>
       </a>
 

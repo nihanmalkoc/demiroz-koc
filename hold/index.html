@@ -17,189 +17,196 @@
 
 <style>
 :root {
-  --ink:   #0C0C0D;
-  --ink-70:rgba(12,12,13,.70);
-  --ink-45:rgba(12,12,13,.45);
-  --paper: #FBFBF9;
-  --blue:  #0243FC;
-  --line:  rgba(12,12,13,.14);
-  --ease:  cubic-bezier(.22,1,.36,1);
+  --blue: #0243FC;
+  --ink:  #0C0C0D;
+  --paper:#FBFBF9;
+  --ease: cubic-bezier(.22,1,.36,1);
 }
 *,*::before,*::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   min-height: 100svh;
-  background: var(--paper);
-  color: var(--ink);
+  background: #0E0F11;
+  color: #fff;
   font-family: "Montserrat", "Century Gothic", system-ui, sans-serif;
   font-size: .9375rem;
   line-height: 1.78;
-  font-weight: 400;
   letter-spacing: -.002em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 ::selection { background: var(--blue); color: #fff; }
-:focus-visible { outline: 1.5px solid var(--blue); outline-offset: 4px; }
+:focus-visible { outline: 1.5px solid #fff; outline-offset: 4px; }
 
-/* ---------- Layout: text left, image right ---------- */
-.wrap {
+/* ---------- Full-bleed stage ---------- */
+.stage {
+  position: relative;
   min-height: 100svh;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  /* minmax(0,…) — an auto track takes the image's intrinsic width as its
-     min-content size, which pushes the layout wider than the viewport */
-  grid-template-columns: minmax(0, 1fr);
-}
-@media (min-width: 60rem) {
-  .wrap {
-    grid-template-rows: none;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-  }
-}
-.panel, .media { min-width: 0; }
-
-.panel {
   display: flex;
   flex-direction: column;
-  padding: clamp(1.75rem, 5vw, 4.5rem);
-  min-height: 60svh;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  isolation: isolate;
+  overflow: hidden;
 }
-@media (min-width: 60rem) { .panel { min-height: 100svh; } }
+.stage__media { position: absolute; inset: 0; z-index: -2; }
+.stage__media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  animation: drift 26s var(--ease) forwards;
+}
+@keyframes drift { to { transform: scale(1); } }
 
-.brand img { height: clamp(1.9rem, 4.2vw, 2.75rem); width: auto; }
+/* Two scrims. The horizontal one does the real work: the type is all
+   left-aligned, so shading the left third buys contrast while leaving the
+   right side of the render clean. A daylight image can't carry white type
+   on a flat overlay without going muddy. */
+.stage::after {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(to right,
+      rgba(8,8,10,.86) 0%,
+      rgba(8,8,10,.66) 26%,
+      rgba(8,8,10,.28) 52%,
+      rgba(8,8,10,.02) 78%,
+      rgba(8,8,10,0)   100%),
+    linear-gradient(to top,
+      rgba(8,8,10,.62) 0%,
+      rgba(8,8,10,.22) 26%,
+      rgba(8,8,10,0)   55%,
+      rgba(8,8,10,.24) 100%);
+}
 
-.middle { margin-top: auto; padding-block: clamp(2.5rem, 6vh, 4rem); }
+/* ---------- Top bar ---------- */
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.brand img { height: clamp(1.75rem, 3.4vw, 2.6rem); width: auto; }
+
+.lang {
+  display: flex; gap: .4rem; align-items: center;
+  font-size: .625rem; letter-spacing: .14em;
+  color: rgba(255,255,255,.5);
+  padding-top: .35rem;
+}
+.lang button { padding: .2rem 0; transition: color .35s; }
+.lang button[aria-pressed="true"] { color: #fff; }
+.lang .sep { opacity: .4; }
+
+/* ---------- Bottom content ---------- */
+.foot { margin-top: auto; padding-top: clamp(3rem, 10vh, 7rem); }
 
 .label {
   font-size: .625rem;
   font-weight: 500;
   letter-spacing: .24em;
   text-transform: uppercase;
-  color: var(--ink-45);
+  color: rgba(255,255,255,.62);
 }
 
-/* The rule slowly fills — a quiet "in progress" signal, no spinner needed */
-.rule {
-  position: relative;
+.datum {
   height: 1px;
-  background: var(--line);
-  margin: 1.5rem 0;
-  overflow: hidden;
-}
-.rule::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--blue);
+  background: rgba(255,255,255,.28);
+  margin: 1.25rem 0 clamp(1.25rem, 3vh, 2rem);
+  transform: scaleX(0);
   transform-origin: left;
-  animation: fill 4.5s var(--ease) infinite;
+  animation: datum 1.5s var(--ease) .3s forwards;
 }
-@keyframes fill {
-  0%   { transform: scaleX(0);   opacity: 1; }
-  55%  { transform: scaleX(1);   opacity: 1; }
-  85%  { transform: scaleX(1);   opacity: 0; }
-  100% { transform: scaleX(0);   opacity: 0; }
-}
+@keyframes datum { to { transform: scaleX(1); } }
 
 h1 {
   margin: 0;
   font-weight: 200;
-  font-size: clamp(1.75rem, 3.6vw, 3.1rem);
-  line-height: 1.16;
-  letter-spacing: -.03em;
-  max-width: 15ch;
-}
-.lede {
-  margin: 1.75rem 0 0;
-  font-weight: 300;
-  font-size: clamp(1rem, 1.25vw, 1.125rem);
-  line-height: 1.68;
-  color: var(--ink-70);
-  max-width: 38ch;
+  font-size: clamp(1.9rem, 4.6vw, 4.25rem);
+  line-height: 1.1;
+  letter-spacing: -.035em;
+  max-width: 17ch;
 }
 
-.foot { margin-top: auto; }
-.foot__rule { height: 1px; background: var(--line); margin-bottom: 1.5rem; }
-
-.foot__cols {
+.cols {
+  margin-top: clamp(2rem, 5vh, 3.25rem);
+  padding-top: clamp(1.25rem, 3vh, 2rem);
+  border-top: 1px solid rgba(255,255,255,.22);
   display: flex;
   flex-wrap: wrap;
-  gap: 1.75rem 2.5rem;
-  align-items: flex-start;
+  gap: 1.75rem clamp(2rem, 5vw, 4rem);
+  align-items: flex-end;
   justify-content: space-between;
 }
-.contact { display: grid; gap: .55rem; }
-
-/* Kept at 148px+: below roughly 140px the code stops reading reliably
-   when a phone camera is pointed at a screen. */
-.qr {
-  flex: 0 0 auto;
-  display: grid;
-  gap: .6rem;
-  justify-items: center;
+.lede {
+  margin: 0;
+  font-weight: 300;
+  font-size: clamp(.9375rem, 1.15vw, 1.0625rem);
+  line-height: 1.7;
+  color: rgba(255,255,255,.80);
+  max-width: 36ch;
 }
-.qr img {
-  width: clamp(9.25rem, 12vw, 10.5rem);
-  height: auto;
-  display: block;
-}
-.qr .label { transition: color .35s var(--ease); }
-.qr:hover .label { color: var(--ink); }
-.contact a {
-  position: relative;
-  display: inline-block;
-  width: fit-content;
-  padding-bottom: 2px;
-}
+.contact { display: grid; gap: .5rem; }
+.contact a { position: relative; display: inline-block; width: fit-content; padding-bottom: 2px; }
 .contact a::after {
-  content: "";
-  position: absolute; left: 0; bottom: 0;
-  width: 100%; height: 1px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: left;
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 1px; background: currentColor;
+  transform: scaleX(0); transform-origin: left;
   transition: transform .55s var(--ease);
 }
 .contact a:hover::after { transform: scaleX(1); }
 
-.bottom {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .75rem 1.5rem;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
+/* The code has to stay dark-on-light to scan, so it gets its own paper tile
+   rather than being inverted onto the photograph. */
+.qr {
+  flex: 0 0 auto;
+  display: grid;
+  gap: .55rem;
+  justify-items: center;
 }
-.small { font-size: .75rem; color: var(--ink-45); }
-
-.lang { display: flex; gap: .4rem; align-items: center; font-size: .625rem; letter-spacing: .14em; color: var(--ink-45); }
-.lang button { padding: .2rem 0; transition: color .35s; }
-.lang button[aria-pressed="true"] { color: var(--ink); }
-.lang .sep { opacity: .4; }
-
-/* ---------- Image ---------- */
-.media { position: relative; background: #101012; overflow: hidden; min-height: 40svh; }
-@media (min-width: 60rem) { .media { min-height: 100svh; } }
-.media img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transform: scale(1.05);
-  animation: drift 24s var(--ease) forwards;
+.qr__tile {
+  background: var(--paper);
+  padding: .7rem;
+  display: block;
 }
-@keyframes drift { to { transform: scale(1); } }
+.qr__tile img { width: clamp(8rem, 10vw, 9.5rem); height: auto; }
+.qr .label { color: rgba(255,255,255,.75); transition: color .35s var(--ease); }
+.qr:hover .label { color: #fff; }
+/* Sits over the clear part of the render, so it carries its own shadow */
+.qr__tile { box-shadow: 0 2px 40px rgba(8,8,10,.35); }
+
+.copy {
+  margin-top: clamp(1.5rem, 4vh, 2.5rem);
+  font-size: .75rem;
+  color: rgba(255,255,255,.45);
+}
 
 /* Reveal */
 .up { opacity: 0; transform: translateY(1rem); animation: up 1s var(--ease) forwards; }
-.up:nth-child(1) { animation-delay: .05s; }
-.d1 { animation-delay: .18s; }
-.d2 { animation-delay: .28s; }
-.d3 { animation-delay: .38s; }
+.d0 { animation-delay: .06s; }
+.d1 { animation-delay: .20s; }
+.d2 { animation-delay: .32s; }
+.d3 { animation-delay: .44s; }
 @keyframes up { to { opacity: 1; transform: none; } }
+
+@media (max-width: 48rem) {
+  .cols { align-items: flex-start; }
+  .qr__tile img { width: 8rem; }
+  /* Narrow screens: the text spans the full width, so a left-side scrim
+     buys nothing. Weight it vertically instead. */
+  .stage::after {
+    background: linear-gradient(to top,
+      rgba(8,8,10,.90) 0%,
+      rgba(8,8,10,.80) 30%,
+      rgba(8,8,10,.58) 52%,
+      rgba(8,8,10,.22) 76%,
+      rgba(8,8,10,.34) 100%);
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -208,58 +215,53 @@ h1 {
     transition-duration: .01ms !important;
   }
   .up { opacity: 1; transform: none; }
-  .rule::after { transform: scaleX(1); }
+  .datum { transform: scaleX(1); }
 }
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <div class="panel">
+<div class="stage">
+  <div class="stage__media">
+    <img src="assets/gorsel.jpg" alt="" aria-hidden="true">
+  </div>
 
-    <a class="brand up" href="/" aria-label="Demiröz ✕ Koç">
-      <img src="assets/logo-tr.png"
-           data-src-tr="assets/logo-tr.png"
-           data-src-en="assets/logo-en.png"
+  <div class="top up d0">
+    <a class="brand" href="/" aria-label="Demiröz ✕ Koç">
+      <img src="assets/logo-tr-w.png"
+           data-src-tr="assets/logo-tr-w.png"
+           data-src-en="assets/logo-en-w.png"
            alt="Demiröz ✕ Koç Mimarlık • Tasarım">
     </a>
+    <span class="lang" role="group" aria-label="Dil / Language">
+      <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+      <span class="sep" aria-hidden="true">/</span>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </span>
+  </div>
 
-    <div class="middle">
-      <p class="label up d1" data-i18n="label">Yapım Aşamasında</p>
-      <div class="rule up d1" aria-hidden="true"></div>
-      <h1 class="up d2" data-i18n="h1">Yeni web sitemiz üzerinde çalışıyoruz.</h1>
-      <p class="lede up d3" data-i18n="lede">Bu süre boyunca projelerimizi Instagram hesabımızdan takip edebilir, iş birlikleri ve proje başvuruları için doğrudan bize yazabilirsiniz.</p>
-    </div>
+  <div class="foot">
+    <p class="label up d1" data-i18n="label">Yapım Aşamasında</p>
+    <div class="datum" aria-hidden="true"></div>
+    <h1 class="up d2" data-i18n="h1">Yeni web sitemiz üzerinde çalışıyoruz.</h1>
 
-    <div class="foot up d3">
-      <div class="foot__rule"></div>
-      <div class="foot__cols">
-        <div class="contact">
-          <p class="label" data-i18n="contactLabel">İletişim</p>
+    <div class="cols up d3">
+      <div>
+        <p class="lede" data-i18n="lede">Bu süre boyunca projelerimizi Instagram hesabımızdan takip edebilir, iş birlikleri ve proje başvuruları için doğrudan bize yazabilirsiniz.</p>
+        <div class="contact" style="margin-top:1.5rem">
           <a href="mailto:info@demirozkoc.com">info@demirozkoc.com</a>
           <a href="tel:+905464677696">+90 546 467 76 96</a>
           <a href="https://instagram.com/demiroz_koc_architects" target="_blank" rel="noopener">@demiroz_koc_architects</a>
         </div>
+      </div>
 
-        <a class="qr" href="https://instagram.com/demiroz_koc_architects" target="_blank" rel="noopener">
-          <img src="assets/qr-instagram.png" alt="Instagram hesabımıza gitmek için kodu okutun" width="1080" height="1080">
-          <span class="label" data-i18n="qrLabel">Instagram</span>
-        </a>
-      </div>
-      <div class="bottom">
-        <p class="small">© <span id="year">2026</span> Demiröz ✕ Koç — <span data-i18n="city">Ankara</span></p>
-        <span class="lang" role="group" aria-label="Dil / Language">
-          <button type="button" data-lang="tr" aria-pressed="true">TR</button>
-          <span class="sep" aria-hidden="true">/</span>
-          <button type="button" data-lang="en" aria-pressed="false">EN</button>
-        </span>
-      </div>
+      <a class="qr" href="https://instagram.com/demiroz_koc_architects" target="_blank" rel="noopener">
+        <span class="qr__tile"><img src="assets/qr-instagram.png" alt="Instagram hesabımıza gitmek için kodu okutun"></span>
+        <span class="label" data-i18n="qrLabel">Instagram</span>
+      </a>
     </div>
 
-  </div>
-
-  <div class="media">
-    <img src="assets/gorsel.jpg" alt="Zabjelo Kültür ve Toplum Merkezi — Podgorica">
+    <p class="copy">© <span id="year">2026</span> Demiröz ✕ Koç — <span data-i18n="city">Ankara</span></p>
   </div>
 </div>
 
@@ -271,7 +273,6 @@ h1 {
     label: "Under Construction",
     h1: "We are working on our new website.",
     lede: "In the meantime you can follow our projects on Instagram, or write to us directly for collaborations and project enquiries.",
-    contactLabel: "Contact",
     qrLabel: "Instagram",
     city: "Ankara"
   };

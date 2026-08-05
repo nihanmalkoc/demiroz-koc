@@ -8,3 +8,7 @@ _paylas/
 Thumbs.db
 .DS_Store
 desktop.ini
+
+# FTP / panel bilgileri - asla repoya girmesin
+ftp-bilgi.txt
+*.credentials

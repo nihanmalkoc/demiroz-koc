@@ -363,13 +363,28 @@ ul { margin: 0; padding: 0; list-style: none; }
   inset: 0;
   z-index: -2;
 }
+/* Slide stack: all frames layered, only .is-on visible. The slow zoom runs on
+   the active frame; js/main.js restarts the animation on each change so it
+   plays again when the loop comes back around. */
+/* Timing: the crossfade below and HOLD in js/main.js (heroSlides) belong
+   together — the fade must stay well under the hold or slides never settle.
+   Zoom runs a little longer than the hold so it never visibly stops. */
 .hero__media img {
+  position: absolute;
+  inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  transform: scale(1.06);
-  animation: heroDrift 22s var(--ease) forwards;
+  opacity: 0;
+  transition: opacity 1s var(--swift);
 }
-@keyframes heroDrift { to { transform: scale(1); } }
+.hero__media img.is-on {
+  opacity: 1;
+  animation: heroDrift 5.5s var(--ease) forwards;
+}
+@keyframes heroDrift {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1); }
+}
 /* Scrim. Tuned for a photographic hero with a bright sky: heavy where the
    headline sits, near-clear across the middle of the image, with a light
    top band so the inverted header stays legible. */
@@ -390,50 +405,23 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding-bottom: clamp(2.5rem, 8vh, 5.5rem);
   padding-top: 8rem;
 }
-.hero .display { color: #fff; }
-
-/* Stepped headline.
-   Three flush-left lines read as one solid block against the render; stepping
-   each line in — with a hairline datum above and below — breaks the block and
-   gives the type the rhythm of a levels annotation. */
-.hero__datum {
-  display: block;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.22);
-  margin-top: 1.5rem;
-  margin-bottom: clamp(1.5rem, 3.5vh, 2.75rem);
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: datum 1.4s var(--ease) 0.25s forwards;
-}
-@keyframes datum { to { transform: scaleX(1); } }
-
-/* Flush left, all three lines on the same axis.
-   Only the leading is opened past the display default — at 1.02 the descenders
-   of "program" / "yapıyı" clash with the line below. */
-.hero__title {
-  margin: 0;
-  font-size: clamp(1.9rem, 5.5vw, 5.6rem);
-  line-height: 1.1;
-}
-.hero__line { display: block; }
-
+/* No headline — the render carries the page. All that sits over it is the
+   positioning line, then a hairline row with the studio label and the CTA. */
 .hero__meta {
-  margin-top: clamp(1.5rem, 3.5vh, 2.75rem);
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255,255,255,0.22);
   display: grid;
-  gap: 1.25rem;
+  gap: clamp(1.5rem, 4vh, 2.75rem);
 }
-@media (min-width: 48rem) {
-  .hero__meta {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: end;
-    gap: 2.5rem;
-  }
+.hero__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  align-items: center;
+  justify-content: space-between;
 }
-.hero__meta .lede { color: rgba(255,255,255,0.82); }
-.hero__meta .label { color: rgba(255,255,255,0.6); }
+.hero__meta .lede { color: rgba(255,255,255,0.88); }
+.hero__meta .label { color: rgba(255,255,255,0.62); }
 
 .scroll-cue {
   position: absolute;
@@ -470,6 +458,9 @@ ul { margin: 0; padding: 0; list-style: none; }
     gap: clamp(2rem, 6vw, 6rem);
     align-items: end;
   }
+  /* Project pages: the spec list is taller than the heading, so baseline-ing
+     them at the bottom pushes the title down. Line their tops up instead. */
+  .page-head__row--top { align-items: start; }
 }
 
 /* ==========================================================================
@@ -493,14 +484,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   transition: transform 1.25s var(--ease), filter 0.8s var(--swift);
 }
 .work:hover .work__media img { transform: scale(1.035); }
-.work__media::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: var(--ink);
-  opacity: 0;
-  transition: opacity 0.7s var(--swift);
+
+/* The grid reads as one monochrome set; colour arrives on the card you point
+   at. Guarded by hover:hover — a touch device never hovers, so there it stays
+   in colour rather than being stuck grey. */
+@media (hover: hover) {
+  .work__media img { filter: grayscale(1); }
+  .work:hover .work__media img { filter: grayscale(0); }
 }
-.work:hover .work__media::after { opacity: 0.05; }
 
 .work__bar {
   display: flex;
@@ -589,25 +580,6 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (min-width: 62rem) {
   .split--even { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-
-.stat-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem 1.5rem;
-  border-top: 1px solid var(--line);
-  padding-top: 2rem;
-}
-@media (min-width: 56rem) { .stat-row { grid-template-columns: repeat(4, 1fr); } }
-.stat__n {
-  font-family: var(--font-display);
-  font-weight: 200;
-  font-size: clamp(2.25rem, 4.6vw, 3.75rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  font-variant-numeric: tabular-nums;
-}
-.stat__n em { font-style: normal; color: var(--blue); }
-.stat__k { margin-top: 0.6rem; }
 
 /* Definition list — services, credits, awards */
 .dl { border-top: 1px solid var(--line); }
@@ -772,6 +744,20 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .btn:hover::before { transform: translateY(0); }
 .form-note { margin-top: 1.25rem; }
+
+/* Home page contact details */
+.home-contact {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 1.75rem 2.5rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 48rem) {
+  .home-contact { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.home-contact p + p { margin-top: 0.5rem; }
 
 .map-frame {
   border: 1px solid var(--line);
@@ -1038,6 +1024,123 @@ figure.fig figcaption .num { flex: 0 0 auto; }
 .bleed { width: 100%; margin: 0; }
 .bleed img { width: 100%; object-fit: cover; }
 .bleed--tall img { aspect-ratio: 16 / 9; max-height: 88svh; }
+
+/* ---------- Project spec, beside the title ----------
+   Compact: sits in the narrow column next to a large heading, so the type
+   stays small and the rows tight. */
+.spec {
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+.spec__row {
+  display: grid;
+  gap: 0.3rem 1.25rem;
+  padding-block: 0.85rem;
+  border-bottom: 1px solid var(--line-soft);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 30rem) {
+  .spec__row { grid-template-columns: 8.5rem minmax(0, 1fr); align-items: baseline; }
+}
+.spec__row dt { margin: 0; padding-top: 0.15rem; }
+.spec__row dd {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--ink-80);
+}
+
+/* ==========================================================================
+   Lightbox
+   ========================================================================== */
+.zoomable { cursor: zoom-in; }
+
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(10, 10, 12, 0.97);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  opacity: 0;
+  visibility: hidden;
+  /* visibility is switched with a delay rather than interpolated: it flips on
+     instantly when opening, and only after the fade has finished when closing.
+     Transitioning visibility itself leaves the panel stuck hidden whenever the
+     transition does not run. */
+  transition: opacity 0.45s var(--swift), visibility 0s 0.45s;
+}
+.lb.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.45s var(--swift), visibility 0s 0s;
+}
+
+.lb__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1rem, 2.5vw, 1.75rem) clamp(1rem, 3vw, 2.5rem);
+  color: rgba(255, 255, 255, 0.62);
+}
+.lb__count { font-variant-numeric: tabular-nums; }
+
+.lb__close {
+  width: 2.5rem; height: 2.5rem;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.35s var(--swift);
+}
+.lb__close:hover { color: #fff; }
+.lb__close svg { width: 1rem; height: 1rem; }
+.lb__close line { stroke: currentColor; stroke-width: 1.25; }
+
+.lb__stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding-inline: clamp(3.25rem, 8vw, 7rem);
+  min-height: 0;
+}
+.lb__stage img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto; height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(0.985);
+  transition: opacity 0.4s var(--swift), transform 0.5s var(--ease);
+}
+.lb__stage img.is-on { opacity: 1; transform: none; }
+
+/* Arrows sit over the stage edges, clear of the image itself */
+.lb__nav {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: clamp(3.25rem, 8vw, 7rem);
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.35s var(--swift);
+}
+.lb__nav:hover { color: #fff; }
+.lb__nav--prev { left: 0; }
+.lb__nav--next { right: 0; }
+.lb__nav svg { width: 1.75rem; height: auto; overflow: visible; }
+.lb__nav svg line, .lb__nav svg polyline { stroke: currentColor; stroke-width: 1; fill: none; }
+
+.lb__foot {
+  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2rem);
+  color: rgba(255, 255, 255, 0.62);
+  min-height: 3.5em;
+}
+.lb__cap { max-width: 68ch; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lb, .lb__stage img { transition: none; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

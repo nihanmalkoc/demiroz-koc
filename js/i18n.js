@@ -21,17 +21,17 @@ window.DK_EN = {
   "cat.all": "All",
   "cat.housing": "Housing",
   "cat.office": "Office",
-  "cat.culture": "Culture",
-  "cat.hospitality": "Hospitality",
+  "cat.multi": "Multifunctional",
+  "cat.urban": "Urban",
 
   /* --- Home: hero --- */
   "hero.label": "Architecture & Design — Ankara",
-  "hero.l1": "Site, programme, light.",
-  "hero.l2": "The three inputs that",
-  "hero.l3": "define a building.",
   "hero.lede": "Across housing, workplace, cultural and public projects — regardless of scale — we make architecture that is calm, lasting and native to its place.",
 
-  /* --- Home: intro --- */
+  /* --- Home: intro, works, services ---
+     Bu bolumler anasayfadan kaldirildi (hero slaytı + iletisim kaldi).
+     Anahtarlar duruyor: metinler baska bir sayfada kullanilmak istenirse
+     hazir olsun diye. Eski HTML: git show 96d0013:index.html */
   "home.introLabel": "01 — Studio",
   "home.introTitle": "Two architects, one way of thinking.",
   "home.introKicker": "Approach",
@@ -55,12 +55,6 @@ window.DK_EN = {
   "serv.4.t": "Consultancy & Site Supervision",
   "serv.4.d": "Feasibility, design management and regular site supervision so that design quality survives construction.",
 
-  /* --- Stats --- */
-  "stat.founded": "Founded",
-  "stat.projects": "Completed Projects",
-  "stat.cities": "Cities",
-  "stat.awards": "Awards & Selections",
-
   /* --- CTA band --- */
   "band.label": "New Work",
   "band.title": "Have a site, a building, or just an idea? Let's talk.",
@@ -73,28 +67,14 @@ window.DK_EN = {
   "foot.rights": "All rights reserved.",
 
   /* --- Works index --- */
-  "works.label": "Works",
   "works.title": "Projects",
-  "works.lede": "A selection of built and ongoing work, from single houses to mixed-use buildings.",
-  "works.filterLabel": "Filter",
-  "works.count": "projects",
   "works.empty": "No projects in this category yet.",
 
   /* --- Project detail --- */
   "proj.label": "Project",
-  "proj.lede": "A 1,900 m² residential building on a narrow inner-city plot, organised around a full-height light well that brings daylight to every floor.",
-  "proj.factsLabel": "Facts",
-  "proj.f.type": "Type",
   "proj.f.type.v": "Housing — 14 units",
-  "proj.f.loc": "Location",
-  "proj.f.loc.v": "Nişantaşı, Istanbul",
-  "proj.f.area": "Area",
-  "proj.f.area.v": "1,900 m²",
-  "proj.f.year": "Year",
-  "proj.f.year.v": "2024 — completed",
-  "proj.f.status": "Scope",
-  "proj.f.status.v": "Architecture, interiors, site supervision",
-  "proj.f.team": "Team",
+  "proj.f.loc.v": "Nişantaşı, Istanbul — 2024",
+  "proj.f.status.v": "Completed",
   "proj.f.team.v": "Demiröz ✕ Koç with Studio Tektonik (structure)",
   "proj.briefLabel": "Brief",
   "proj.briefTitle": "A courtyard turned inside out",
@@ -153,6 +133,7 @@ window.DK_EN = {
   "contact.title": "Let's talk about your project.",
   "contact.lede": "Tell us about the site, the programme and your timeline. We reply to every enquiry within two working days.",
   "contact.emailLabel": "Email",
+  "contact.phoneLabel": "Phone",
   "contact.studioLabel": "Studio",
   "contact.addr": "Cinnah Cad. No. 00, Kat 3<br>Çankaya 06690, Ankara, Türkiye",
   "contact.hoursLabel": "Hours",
@@ -187,22 +168,20 @@ window.DK_EN = {
      English copy below is the studio's own competition report text
      (VERI/zabjelo community centre/RAPOR/mimari rapor_2.docx).
      ======================================================================== */
+  /* --- Spec block beside the project title --- */
+  "s.func": "Function",
+  "s.func.v": "Culture and community centre — healthcare unit, multi-purpose hall, youth and senior clubs",
+  "s.loc": "Location and Date",
+  "s.loc.v": "Zabjelo, Podgorica — Montenegro, 2026",
+  "s.site": "Site Area",
+  "s.gfa": "Gross Floor Area",
+  "s.status": "Status",
+  "s.status.v": "Conceptual design competition proposal",
+  "s.team": "Team",
+
   "z.country": "Montenegro",
   "z.title": "Zabjelo Community Centre",
-  "z.lede": "A mixed public building that lifts the public realm off the ground floor and links two streets through a passage at the heart of the structure.",
   "z.cardTag": "Culture · Public",
-
-  "z.f.type": "Typology",
-  "z.f.type.v": "Community and cultural centre — healthcare unit, multi-purpose hall, youth and senior clubs",
-  "z.f.loc": "Location",
-  "z.f.loc.v": "Zabjelo, Podgorica — Montenegro",
-  "z.f.status": "Status",
-  "z.f.status.v": "Conceptual design competition proposal",
-  "z.f.floors": "Floors",
-  "z.f.floors.v": "4 basement levels (parking and services) + ground + 5 upper floors",
-  "z.f.scope": "Scope",
-  "z.f.scope.v": "Architectural concept design, landscape strategy, interiors",
-  "z.f.year": "Year",
 
   "z.c1.label": "Concept Design Approach",
   "z.c1.kicker": "Design Criteria",
@@ -282,5 +261,6 @@ window.DK_EN = {
   "z.cap.elev2": "Side elevation.",
   "z.cap.plan05": "Fifth floor plan — clubs and terraces.",
   "z.cap.model": "Physical model.",
+
   "z.pagerAll": "Project archive"
 };

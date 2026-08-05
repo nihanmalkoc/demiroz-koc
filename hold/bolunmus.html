@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demiröz ✕ Koç — Mimarlık • Tasarım</title>
+<meta name="description" content="Demiröz ✕ Koç Mimarlık • Tasarım. Yeni web sitemiz yapım aşamasında.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<meta property="og:title" content="Demiröz ✕ Koç — Mimarlık • Tasarım">
+<meta property="og:description" content="Yeni web sitemiz yapım aşamasında.">
+<meta property="og:image" content="assets/gorsel.jpg">
+<meta property="og:type" content="website">
+
+<style>
+:root {
+  --ink:   #0C0C0D;
+  --ink-70:rgba(12,12,13,.70);
+  --ink-45:rgba(12,12,13,.45);
+  --paper: #FBFBF9;
+  --blue:  #0243FC;
+  --line:  rgba(12,12,13,.14);
+  --ease:  cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Montserrat", "Century Gothic", system-ui, sans-serif;
+  font-size: .9375rem;
+  line-height: 1.78;
+  font-weight: 400;
+  letter-spacing: -.002em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+::selection { background: var(--blue); color: #fff; }
+:focus-visible { outline: 1.5px solid var(--blue); outline-offset: 4px; }
+
+/* ---------- Layout: text left, image right ---------- */
+.wrap {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  /* minmax(0,…) — an auto track takes the image's intrinsic width as its
+     min-content size, which pushes the layout wider than the viewport */
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 60rem) {
+  .wrap {
+    grid-template-rows: none;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  }
+}
+.panel, .media { min-width: 0; }
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.75rem, 5vw, 4.5rem);
+  min-height: 60svh;
+}
+@media (min-width: 60rem) { .panel { min-height: 100svh; } }
+
+.brand img { height: clamp(1.9rem, 4.2vw, 2.75rem); width: auto; }
+
+.middle { margin-top: auto; padding-block: clamp(2.5rem, 6vh, 4rem); }
+
+.label {
+  font-size: .625rem;
+  font-weight: 500;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--ink-45);
+}
+
+/* The rule slowly fills — a quiet "in progress" signal, no spinner needed */
+.rule {
+  position: relative;
+  height: 1px;
+  background: var(--line);
+  margin: 1.5rem 0;
+  overflow: hidden;
+}
+.rule::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--blue);
+  transform-origin: left;
+  animation: fill 4.5s var(--ease) infinite;
+}
+@keyframes fill {
+  0%   { transform: scaleX(0);   opacity: 1; }
+  55%  { transform: scaleX(1);   opacity: 1; }
+  85%  { transform: scaleX(1);   opacity: 0; }
+  100% { transform: scaleX(0);   opacity: 0; }
+}
+
+h1 {
+  margin: 0;
+  font-weight: 200;
+  font-size: clamp(1.75rem, 3.6vw, 3.1rem);
+  line-height: 1.16;
+  letter-spacing: -.03em;
+  max-width: 15ch;
+}
+.lede {
+  margin: 1.75rem 0 0;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  line-height: 1.68;
+  color: var(--ink-70);
+  max-width: 38ch;
+}
+
+.foot { margin-top: auto; }
+.foot__rule { height: 1px; background: var(--line); margin-bottom: 1.5rem; }
+
+.foot__cols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem 2.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.contact { display: grid; gap: .55rem; }
+
+/* Kept at 148px+: below roughly 140px the code stops reading reliably
+   when a phone camera is pointed at a screen. */
+.qr {
+  flex: 0 0 auto;
+  display: grid;
+  gap: .6rem;
+  justify-items: center;
+}
+.qr img {
+  width: clamp(9.25rem, 12vw, 10.5rem);
+  height: auto;
+  display: block;
+}
+.qr .label { transition: color .35s var(--ease); }
+.qr:hover .label { color: var(--ink); }
+.contact a {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  padding-bottom: 2px;
+}
+.contact a::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .55s var(--ease);
+}
+.contact a:hover::after { transform: scaleX(1); }
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+.small { font-size: .75rem; color: var(--ink-45); }
+
+.lang { display: flex; gap: .4rem; align-items: center; font-size: .625rem; letter-spacing: .14em; color: var(--ink-45); }
+.lang button { padding: .2rem 0; transition: color .35s; }
+.lang button[aria-pressed="true"] { color: var(--ink); }
+.lang .sep { opacity: .4; }
+
+/* ---------- Image ---------- */
+.media { position: relative; background: #101012; overflow: hidden; min-height: 40svh; }
+@media (min-width: 60rem) { .media { min-height: 100svh; } }
+.media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  animation: drift 24s var(--ease) forwards;
+}
+@keyframes drift { to { transform: scale(1); } }
+
+/* Reveal */
+.up { opacity: 0; transform: translateY(1rem); animation: up 1s var(--ease) forwards; }
+.up:nth-child(1) { animation-delay: .05s; }
+.d1 { animation-delay: .18s; }
+.d2 { animation-delay: .28s; }
+.d3 { animation-delay: .38s; }
+@keyframes up { to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .up { opacity: 1; transform: none; }
+  .rule::after { transform: scaleX(1); }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="panel">
+
+    <a class="brand up" href="/" aria-label="Demiröz ✕ Koç">
+      <img src="assets/logo-tr.png"
+           data-src-tr="assets/logo-tr.png"
+           data-src-en="assets/logo-en.png"
+           alt="Demiröz ✕ Koç Mimarlık • Tasarım">
+    </a>
+
+    <div class="middle">
+      <p class="label up d1" data-i18n="label">Yapım Aşamasında</p>
+      <div class="rule up d1" aria-hidden="true"></div>
+      <h1 class="up d2" data-i18n="h1">Yeni web sitemiz üzerinde çalışıyoruz.</h1>
+      <p class="lede up d3" data-i18n="lede">Bu süre boyunca projelerimizi Instagram hesabımızdan takip edebilir, iş birlikleri ve proje başvuruları için doğrudan bize yazabilirsiniz.</p>
+    </div>
+
+    <div class="foot up d3">
+      <div class="foot__rule"></div>
+      <div class="foot__cols">
+        <div class="contact">
+          <p class="label" data-i18n="contactLabel">İletişim</p>
+          <a href="mailto:info@demirozkoc.com">info@demirozkoc.com</a>
+          <a href="tel:+905464677696">+90 546 467 76 96</a>
+          <a href="https://instagram.com/demiroz_koc_architects" target="_blank" rel="noopener">@demiroz_koc_architects</a>
+        </div>
+
+        <a class="qr" href="https://instagram.com/demiroz_koc_architects" target="_blank" rel="noopener">
+          <img src="assets/qr-instagram.png" alt="Instagram hesabımıza gitmek için kodu okutun" width="1080" height="1080">
+          <span class="label" data-i18n="qrLabel">Instagram</span>
+        </a>
+      </div>
+      <div class="bottom">
+        <p class="small">© <span id="year">2026</span> Demiröz ✕ Koç — <span data-i18n="city">Ankara</span></p>
+        <span class="lang" role="group" aria-label="Dil / Language">
+          <button type="button" data-lang="tr" aria-pressed="true">TR</button>
+          <span class="sep" aria-hidden="true">/</span>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="media">
+    <img src="assets/gorsel.jpg" alt="Zabjelo Kültür ve Toplum Merkezi — Podgorica">
+  </div>
+</div>
+
+<script>
+(function () {
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var EN = {
+    label: "Under Construction",
+    h1: "We are working on our new website.",
+    lede: "In the meantime you can follow our projects on Instagram, or write to us directly for collaborations and project enquiries.",
+    contactLabel: "Contact",
+    qrLabel: "Instagram",
+    city: "Ankara"
+  };
+
+  var nodes = document.querySelectorAll('[data-i18n]');
+  var TR = {};
+  nodes.forEach(function (n) { TR[n.getAttribute('data-i18n')] = n.textContent; });
+
+  var trTitle = document.title;
+  var enTitle = "Demiröz ✕ Koç — Architecture & Design";
+
+  function apply(lang) {
+    var dict = lang === 'en' ? EN : TR;
+    nodes.forEach(function (n) {
+      var k = n.getAttribute('data-i18n');
+      if (dict[k] != null) n.textContent = dict[k];
+    });
+    document.querySelectorAll('[data-src-tr][data-src-en]').forEach(function (img) {
+      img.src = img.getAttribute(lang === 'en' ? 'data-src-en' : 'data-src-tr');
+    });
+    document.documentElement.lang = lang;
+    document.title = lang === 'en' ? enTitle : trTitle;
+    document.querySelectorAll('[data-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+    });
+    try { localStorage.setItem('dk-lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('[data-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.getAttribute('data-lang')); });
+  });
+
+  try { if (localStorage.getItem('dk-lang') === 'en') apply('en'); } catch (e) {}
+})();
+</script>
+</body>
+</html>

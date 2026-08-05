@@ -59,7 +59,7 @@
   </div>
 </div>
 
-<main id="main">
+<main id="main" data-gallery>
 
   <!-- ---------- Title ---------- -->
   <section class="page-head shell">
@@ -68,9 +68,37 @@
       <span data-i18n="cta.backToWorks">Projelere Dön</span>
     </a>
     <p class="label" data-reveal><span class="num">01</span> &nbsp; <span data-i18n="proj.label">Proje</span></p>
-    <div class="page-head__row" style="margin-top:1.5rem">
+    <div class="page-head__row page-head__row--top" style="margin-top:1.5rem">
       <h1 class="h1"><span data-reveal-mask><span>Nişantaşı Rezidans</span></span></h1>
-      <p class="lede" data-reveal data-reveal-delay="1" data-i18n="proj.lede">Dar bir kent parselinde, her kata gün ışığı taşıyan tam yükseklikte bir ışık boşluğu çevresinde kurulan 1.900 m² konut yapısı.</p>
+
+      <!-- PROJE KÜNYESİ — her proje sayfasında baslikla yan yana duran blok.
+           Alti satir sabit; degeri bilinmiyorsa em-dash (—) birakin. -->
+      <dl class="spec" data-reveal data-reveal-delay="1">
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.func">İşlev</dt>
+          <dd data-i18n="proj.f.type.v">Konut — 14 birim</dd>
+        </div>
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.loc">Konum ve Tarih</dt>
+          <dd data-i18n="proj.f.loc.v">Nişantaşı, İstanbul — 2024</dd>
+        </div>
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.site">Arsa Alanı</dt>
+          <dd>620 m²</dd>
+        </div>
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.gfa">İnşaat Alanı</dt>
+          <dd>1.900 m²</dd>
+        </div>
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.status">Durum</dt>
+          <dd data-i18n="proj.f.status.v">Tamamlandı</dd>
+        </div>
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.team">Ekip</dt>
+          <dd data-i18n="proj.f.team.v">Demiröz ✕ Koç, Studio Tektonik (statik) iş birliğiyle</dd>
+        </div>
+      </dl>
     </div>
   </section>
 
@@ -78,42 +106,6 @@
   <figure class="proj-hero" style="margin:0">
     <img src="assets/img/d-01.svg" alt="Nişantaşı Rezidans — sokak cephesi">
   </figure>
-
-  <!-- ---------- Facts ---------- -->
-  <section class="section--tight shell">
-    <div class="dl">
-      <div class="dl__row" data-reveal>
-        <span class="num">01</span>
-        <span class="label label--ink" data-i18n="proj.f.type">Tipoloji</span>
-        <span class="body-text" data-i18n="proj.f.type.v">Konut — 14 birim</span>
-      </div>
-      <div class="dl__row" data-reveal>
-        <span class="num">02</span>
-        <span class="label label--ink" data-i18n="proj.f.loc">Konum</span>
-        <span class="body-text" data-i18n="proj.f.loc.v">Nişantaşı, İstanbul</span>
-      </div>
-      <div class="dl__row" data-reveal>
-        <span class="num">03</span>
-        <span class="label label--ink" data-i18n="proj.f.area">Alan</span>
-        <span class="body-text" data-i18n="proj.f.area.v">1.900 m²</span>
-      </div>
-      <div class="dl__row" data-reveal>
-        <span class="num">04</span>
-        <span class="label label--ink" data-i18n="proj.f.year">Yıl</span>
-        <span class="body-text" data-i18n="proj.f.year.v">2024 — tamamlandı</span>
-      </div>
-      <div class="dl__row" data-reveal>
-        <span class="num">05</span>
-        <span class="label label--ink" data-i18n="proj.f.status">Kapsam</span>
-        <span class="body-text" data-i18n="proj.f.status.v">Mimari proje, iç mekân, mesleki kontrol</span>
-      </div>
-      <div class="dl__row" data-reveal>
-        <span class="num">06</span>
-        <span class="label label--ink" data-i18n="proj.f.team">Ekip</span>
-        <span class="body-text" data-i18n="proj.f.team.v">Demiröz ✕ Koç, Studio Tektonik (statik) iş birliğiyle</span>
-      </div>
-    </div>
-  </section>
 
   <!-- ---------- Brief ---------- -->
   <section class="section shell" style="padding-top:clamp(3rem,7vh,5rem)">

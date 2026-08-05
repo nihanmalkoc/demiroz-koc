@@ -62,7 +62,9 @@
   </div>
 </div>
 
-<main id="main">
+<!-- data-gallery: icindeki tum gorseller tek bir lightbox galerisi olur
+     (kutle gelisim kareleri haric, onlarin kendi oynaticisi var) -->
+<main id="main" data-gallery>
 
   <!-- ===================== TITLE ===================== -->
   <section class="page-head shell">
@@ -71,9 +73,37 @@
       <span data-i18n="cta.backToWorks">Projelere Dön</span>
     </a>
     <p class="label" data-reveal><span class="num">01</span> &nbsp; Podgorica, <span data-i18n="z.country">Karadağ</span> — 2026</p>
-    <div class="page-head__row" style="margin-top:1.5rem">
+    <div class="page-head__row page-head__row--top" style="margin-top:1.5rem">
       <h1 class="h1"><span data-reveal-mask><span data-i18n="z.title">Zabjelo Kültür ve Toplum Merkezi</span></span></h1>
-      <p class="lede" data-reveal data-reveal-delay="1" data-i18n="z.lede">Kamusal alanı zemin kotundan koparıp birinci kata taşıyan; iki sokağı yapının kalbinde bir pasajla birleştiren karma kamusal yapı önerisi.</p>
+
+      <!-- Proje künyesi. Arsa ve inşaat alanı raporda geçmiyor; sayı
+           gelene kadar em-dash duruyor, uydurulmadı. -->
+      <dl class="spec" data-reveal data-reveal-delay="1">
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.func">İşlev</dt>
+          <dd data-i18n="s.func.v">Kültür ve toplum merkezi — sağlık birimi, çok amaçlı salon, gençlik ve yaşlılar kulüpleri</dd>
+        </div>
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.loc">Konum ve Tarih</dt>
+          <dd data-i18n="s.loc.v">Zabjelo, Podgorica — Karadağ, 2026</dd>
+        </div>
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.site">Arsa Alanı</dt>
+          <dd>—</dd>
+        </div>
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.gfa">İnşaat Alanı</dt>
+          <dd>—</dd>
+        </div>
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.status">Durum</dt>
+          <dd data-i18n="s.status.v">Kavramsal tasarım yarışması önerisi</dd>
+        </div>
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.team">Ekip</dt>
+          <dd>İrem Demiröz Koç, Burak Koç</dd>
+        </div>
+      </dl>
     </div>
   </section>
 
@@ -81,42 +111,6 @@
   <figure class="bleed bleed--tall">
     <img src="assets/img/zabjelo/hero.jpg" alt="Zabjelo Kültür ve Toplum Merkezi — bulvar köşesinden genel görünüm" fetchpriority="high">
   </figure>
-
-  <!-- ===================== FACTS ===================== -->
-  <section class="section--tight shell">
-    <div class="dl">
-      <div class="dl__row" data-reveal>
-        <span class="num">01</span>
-        <span class="label label--ink" data-i18n="z.f.type">Tipoloji</span>
-        <span class="body-text" data-i18n="z.f.type.v">Kültür ve toplum merkezi — sağlık birimi, çok amaçlı salon, gençlik ve yaşlılar kulüpleri</span>
-      </div>
-      <div class="dl__row" data-reveal>
-        <span class="num">02</span>
-        <span class="label label--ink" data-i18n="z.f.loc">Konum</span>
-        <span class="body-text" data-i18n="z.f.loc.v">Zabjelo, Podgorica — Karadağ</span>
-      </div>
-      <div class="dl__row" data-reveal>
-        <span class="num">03</span>
-        <span class="label label--ink" data-i18n="z.f.status">Statü</span>
-        <span class="body-text" data-i18n="z.f.status.v">Kavramsal tasarım yarışması önerisi</span>
-      </div>
-      <div class="dl__row" data-reveal>
-        <span class="num">04</span>
-        <span class="label label--ink" data-i18n="z.f.floors">Kat Şeması</span>
-        <span class="body-text" data-i18n="z.f.floors.v">4 bodrum (otopark ve servis) + zemin + 5 normal kat</span>
-      </div>
-      <div class="dl__row" data-reveal>
-        <span class="num">05</span>
-        <span class="label label--ink" data-i18n="z.f.scope">Kapsam</span>
-        <span class="body-text" data-i18n="z.f.scope.v">Mimari kavramsal tasarım, peyzaj kurgusu, iç mekân</span>
-      </div>
-      <div class="dl__row" data-reveal>
-        <span class="num">06</span>
-        <span class="label label--ink" data-i18n="z.f.year">Yıl</span>
-        <span class="body-text">2026</span>
-      </div>
-    </div>
-  </section>
 
   <!-- ===================== 01 CONCEPT ===================== -->
   <section class="section shell" style="padding-top:clamp(3rem,7vh,5rem)">
@@ -409,6 +403,7 @@
   <figure class="bleed" data-reveal>
     <img src="assets/img/zabjelo/terraces.jpg" alt="Teraslar ve kat bahçeleri, akşam" loading="lazy" style="aspect-ratio:2.4/1">
   </figure>
+
 
   <!-- ===================== PAGER ===================== -->
   <nav class="pager" aria-label="Proje gezinmesi">

@@ -96,8 +96,9 @@ Toplam ~13 MB. Daha da küçültmek isterseniz WebP'ye çevirmek boyutu yarıya 
   biyografiler açık yer tutucu; eğitim/deneyim bilgisi elimde yoktu.
   `studyo.html` + `js/i18n.js` → `team.1.d`, `team.2.d`.
 - **Ekip fotoğrafları** — `assets/img/team-01.svg`, `team-02.svg` soyut yer tutucu.
-- **Ödüller ve istatistikler** — `studyo.html` içindeki dört ödül satırı ve
-  sayılar (2018 kuruluş, 46+, 9, 4) tamamen uydurma.
+- **Ödüller** — `studyo.html` içindeki dört ödül satırı uydurma.
+- **İşveren notu** — `studyo.html` sonundaki "Özel işverenler, geliştiriciler,
+  belediyeler…" cümlesi de doğrulanmadı.
 - **Açık adres** — `iletisim.html` içindeki "Cinnah Cad. No. 00, Kat 3, Çankaya"
   yer tutucudur. Şehir (Ankara) doğru, sokak/numara uydurma.
   (E-posta `info@demirozkoc.com` ve telefon `+90 546 467 76 96` gerçek.)
