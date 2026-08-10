@@ -305,10 +305,11 @@
      than a GIF: it stays sharp at any width, the frames load lazily, and the
      viewer can step through them instead of only watching.
      ---------------------------------------------------------------------- */
-  (function massfilm() {
-    var root = doc.getElementById('massfilm');
-    if (!root) return;
+  (function massfilms() {
+    var roots = doc.querySelectorAll('.massfilm');
+    for (var r = 0; r < roots.length; r++) initFilm(roots[r]);
 
+  function initFilm(root) {
     var frames  = root.querySelectorAll('.massfilm__stage img');
     var steps   = root.querySelectorAll('.massfilm__steps button');
     var playBtn = root.querySelector('.massfilm__play');
@@ -373,6 +374,7 @@
 
     show(0);
     if (reduceMotion && playBtn) playBtn.setAttribute('aria-pressed', 'false');
+  }
   })();
 
   /* ----------------------------------------------------------------------
@@ -390,7 +392,7 @@
     var imgs = [];
     var all = scope.querySelectorAll('img');
     for (var a = 0; a < all.length; a++) {
-      if (all[a].closest('#massfilm')) continue;
+      if (all[a].closest('.massfilm')) continue;
       imgs.push(all[a]);
     }
     if (!imgs.length) return;

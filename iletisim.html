@@ -77,32 +77,24 @@
 
   <hr class="rule">
 
-  <!-- ---------- Details ---------- -->
+  <!-- ---------- Details ----------
+       Acik adres gosterilmiyor. Gercek adres geldiginde buraya bir satir
+       ve asagiya harita bolumu geri eklenebilir. -->
   <section class="shell section--tight">
-    <div class="split split--even" style="row-gap:3rem">
-      <div class="dl" style="border-top:0">
-        <div class="dl__row" style="grid-template-columns:1fr" data-reveal>
-          <p class="label label--ink" data-i18n="contact.studioLabel">Stüdyo</p>
-          <p class="body-text" style="margin-top:.5rem" data-i18n="contact.addr">Cinnah Cad. No. 00, Kat 3<br>Çankaya 06690, Ankara, Türkiye</p>
-        </div>
-        <div class="dl__row" style="grid-template-columns:1fr" data-reveal>
-          <p class="label label--ink" data-i18n="foot.contactLabel">İletişim</p>
-          <p style="margin-top:.5rem"><a class="link" href="tel:+905464677696">+90 546 467 76 96</a></p>
-        </div>
+    <div class="home-contact" style="margin-top:0; padding-top:0; border-top:0">
+      <div data-reveal>
+        <p class="label label--ink" data-i18n="contact.phoneLabel">Telefon</p>
+        <p><a class="link" href="tel:+905464677696">+90 546 467 76 96</a></p>
       </div>
-      <div class="dl" style="border-top:0">
-        <div class="dl__row" style="grid-template-columns:1fr" data-reveal data-reveal-delay="1">
-          <p class="label label--ink" data-i18n="contact.hoursLabel">Çalışma Saatleri</p>
-          <p class="body-text" style="margin-top:.5rem" data-i18n="contact.hours">Pazartesi – Cuma, 09:30 – 18:30</p>
-        </div>
-        <div class="dl__row" style="grid-template-columns:1fr" data-reveal data-reveal-delay="1">
-          <p class="label label--ink" data-i18n="contact.socialLabel">Takip Et</p>
-          <p style="margin-top:.5rem">
-            <a class="link" href="https://www.instagram.com/demiroz_koc_architects/" target="_blank" rel="noopener">Instagram</a>
-            &nbsp;·&nbsp;
-            <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-          </p>
-        </div>
+      <div data-reveal data-reveal-delay="1">
+        <p class="label label--ink" data-i18n="contact.studioLabel">Stüdyo</p>
+        <p data-i18n="contact.city">Ankara, Türkiye</p>
+      </div>
+      <div data-reveal data-reveal-delay="2">
+        <p class="label label--ink" data-i18n="contact.socialLabel">Takip Et</p>
+        <p>
+          <a class="link" href="https://instagram.com/demiroz_koc_architects" target="_blank" rel="noopener">Instagram</a>
+        </p>
       </div>
     </div>
   </section>
@@ -162,17 +154,9 @@
     </form>
   </section>
 
-  <!-- ---------- Map ---------- -->
-  <section class="shell" style="padding-bottom:var(--section)">
-    <p class="label" style="margin-bottom:1rem" data-reveal data-i18n="contact.mapLabel">Nerede</p>
-    <div class="map-frame" data-reveal>
-      <iframe
-        title="Stüdyo konumu"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=32.855%2C39.895%2C32.875%2C39.907&amp;layer=mapnik"></iframe>
-    </div>
-  </section>
+  <!-- Harita bolumu kaldirildi: adres gosterilmedigi icin haritanin
+       isaretledigi nokta da anlamsiz kaliyordu (zaten yer tutucu bir
+       konumdu). Gercek adres geldiginde .map-frame kalibiyla geri gelir. -->
 
 </main>
 
@@ -181,7 +165,6 @@
     <div class="foot__top">
       <div class="foot__brand">
         <img src="assets/logo-tr-w.png" data-src-tr="assets/logo-tr-w.png" data-src-en="assets/logo-en-w.png" alt="Demiröz ✕ Koç">
-        <p class="body-text" style="color:rgba(251,251,249,.62); max-width:34ch" data-i18n="foot.blurb">Mimarlık ve tasarımı tek bir süreç olarak ele alan bir stüdyo. Ankara merkezli, Türkiye genelinde ve yurt dışında çalışıyoruz.</p>
       </div>
       <div class="foot__col">
         <p class="label" data-i18n="foot.navLabel">Menü</p>

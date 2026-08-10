@@ -60,7 +60,6 @@ window.DK_EN = {
   "band.title": "Have a site, a building, or just an idea? Let's talk.",
 
   /* --- Footer --- */
-  "foot.blurb": "A studio that treats architecture and design as a single process. Based in Ankara, working across Türkiye and abroad.",
   "foot.navLabel": "Menu",
   "foot.contactLabel": "Contact",
   "foot.instagram": "Instagram",
@@ -93,40 +92,26 @@ window.DK_EN = {
 
   /* --- Studio --- */
   "studio.label": "Studio",
-  "studio.title": "We are Demiröz ✕ Koç, an architecture and design studio based in Ankara.",
-  "studio.lede": "Founded by İrem Demiröz Koç and Burak Koç, the studio works across housing, workplace, cultural and public projects, regardless of scale.",
-  "studio.p1": "The studio grew out of a shared frustration: that architecture is too often decided before the place has been understood. We start instead with slow work — walking the site, measuring light through the year, listening to how a client actually lives or works. What follows is usually simpler than what we were asked for.",
-  "studio.p2": "We stay small on purpose. Both partners are involved in every project from the first sketch to the final site visit, and we keep the team at a size where a single conversation still reaches everyone. It means we take on fewer projects, and finish them better.",
-  "studio.p3": "Our work ranges from small interior interventions to mixed-use public buildings. The scale changes; the method does not.",
+  "studio.title": "We work across every field of architecture, at every scale.",
+  "studio.p1": "Demiröz &amp; Koç Mimarlık was founded and began work in Ankara in 2026. Young and dynamic, the practice is able to work across every field of architecture and to organise itself quickly on projects of very different scales, offering a broad range of services from the scale of urban design to the scale of architecture, and from interior design through to construction.",
+  "studio.p2": "Demiröz &amp; Koç Mimarlık brings the same rigour to architectural projects of widely differing use and character — housing, mixed use, hotels, educational buildings, social and cultural facilities, offices, retail buildings and interior design.",
 
-  "studio.approachLabel": "Approach",
-  "studio.approachTitle": "Four things we hold to",
-  "app.1.t": "The place comes first",
-  "app.1.d": "Orientation, prevailing wind, neighbouring party walls, the height of the tree already on site. These set the terms of the project before any drawing begins.",
-  "app.2.t": "Light is a material",
-  "app.2.d": "We model daylight from the earliest massing studies and design openings around it. A well-lit plain room beats a badly-lit elaborate one.",
-  "app.3.t": "Fewer materials, used honestly",
-  "app.3.d": "Three or four materials per building, left as themselves — no cladding pretending to be structure, no finish imitating another.",
-  "app.4.t": "Detail is subtraction",
-  "app.4.d": "The best detail is the one you never notice. We spend our drawing time removing junctions rather than decorating them.",
+  "studio.approachLabel": "Office",
 
-  "studio.teamLabel": "Team",
-  "studio.teamTitle": "Who we are",
-  /* Bios are placeholders — no education or career details were supplied. */
-  "team.1.r": "Founding Partner, Architect",
-  "team.1.d": "Short biography — education, previous experience and area of responsibility within the studio.",
-  "team.2.r": "Founding Partner, Architect",
-  "team.2.d": "Short biography — education, previous experience and area of responsibility within the studio.",
-
-  "studio.awardsLabel": "Recognition",
-  "studio.awardsTitle": "Awards & selections",
-  "aw.1.t": "National Architecture Exhibition — Selected Work",
-  "aw.2.t": "Archdaily Türkiye — Building of the Year, Housing (shortlist)",
-  "aw.3.t": "Sustainable Building Award — Renovation category, Honourable Mention",
-  "aw.4.t": "Chamber of Architects Ankara — Young Practice Selection",
-
-  "studio.clientsLabel": "Clients & Collaborators",
-  "studio.clientsNote": "Private clients, developers, municipalities and cultural institutions. Full reference list available on request.",
+  "studio.servLabel": "Fields of Work",
+  "sv.1.t": "Urban Design",
+  "sv.1.d": "An integrated approach reaching from the scale of urban design to the scale of architecture.",
+  "sv.2.t": "Architectural Design",
+  "sv.2.d": "Housing, mixed use, hotels, educational buildings, social and cultural facilities, offices and retail buildings.",
+  "sv.3.t": "Interior Design",
+  "sv.3.d": "Interiors thought through together with the building envelope.",
+  "sv.4.t": "Construction",
+  "sv.4.d": "Carrying processes from design through to construction, organising quickly across projects of different scales.",
+  "studio.teamLabel": "Founder",
+  "team.2.r": "Architect",
+  /* Turkish has no gendered third-person pronoun, so the source text carries
+     none; the English is written without one rather than inferring. */
+  "team.2.d": "Graduated from the Department of Architecture at Yıldız Technical University in 2013, then spent more than twelve years in leading Turkish architectural practices, taking on team and project management and entering a number of national architectural competitions with different teams. Completed the Master's programme in Architectural Design at Istanbul Technical University in 2019.",
 
   /* --- Contact --- */
   "contact.label": "Contact",
@@ -135,9 +120,7 @@ window.DK_EN = {
   "contact.emailLabel": "Email",
   "contact.phoneLabel": "Phone",
   "contact.studioLabel": "Studio",
-  "contact.addr": "Cinnah Cad. No. 00, Kat 3<br>Çankaya 06690, Ankara, Türkiye",
-  "contact.hoursLabel": "Hours",
-  "contact.hours": "Monday – Friday, 09:30 – 18:30",
+  "contact.city": "Ankara, Türkiye",
   "contact.socialLabel": "Follow",
   "contact.formLabel": "Enquiry",
   "contact.formTitle": "Project enquiry",
@@ -161,7 +144,6 @@ window.DK_EN = {
   "f.submit": "Send Enquiry",
   "f.note": "By sending this form you agree that we may store your details in order to reply. We do not share them with third parties.",
   "f.sent": "Thank you — your enquiry has reached us. We will reply within two working days.",
-  "contact.mapLabel": "Find us",
 
   /* ========================================================================
      Zabjelo Community Centre
@@ -182,27 +164,6 @@ window.DK_EN = {
   "z.country": "Montenegro",
   "z.title": "Zabjelo Community Centre",
   "z.cardTag": "Culture · Public",
-
-  "z.c1.label": "Concept Design Approach",
-  "z.c1.kicker": "Design Criteria",
-  "z.c1.lede": "The core design criteria were defined under nine headings, each drawn from the relationship a public building owes its city.",
-
-  "z.k1.t": "Spatial Distribution",
-  "z.k1.d": "To distribute the building program across the site in a harmonious, balanced and optimized manner.",
-  "z.k2.t": "Public Identity",
-  "z.k2.d": "In accordance with the public nature of the building, to generate a dynamic and outward-looking massing and facade plasticity, creating an inviting architectural language.",
-  "z.k3.t": "Functional Flow",
-  "z.k3.d": "To ensure that diverse functions operate in harmony without interference, providing high operational efficiency and comfort.",
-  "z.k4.t": "Vertical Circulation",
-  "z.k4.d": "To extend public circulation and pedestrian movement effectively to the upper floors, rather than limiting it strictly to the ground level.",
-  "z.k5.t": "Continuous Green Network",
-  "z.k5.d": "To elevate the landscape beyond the ground plane through integrated sky gardens and terraces, ensuring a continuous presence of greenery throughout the building envelope.",
-  "z.k6.t": "Sustainability and Orientation",
-  "z.k6.d": "To implement passive sustainability principles through facade designs that respond directly to microclimatic data and building orientation.",
-  "z.k7.t": "Interior Spatial Configuration",
-  "z.k7.d": "To strengthen the user–space relationship through a sequence of atriums, galleries and indoor courtyards, while enhancing the building's natural ventilation and daylighting performance.",
-  "z.k8.t": "Vibrant Public Realm",
-  "z.k8.d": "To transform the building periphery into an active, day-long public hub through high-quality landscape design.",
 
   "z.c2.label": "Massing Development",
   "z.c2.kicker": "Eight Steps",
@@ -242,7 +203,6 @@ window.DK_EN = {
   "z.c5.p3": "The healthcare units are situated on the southern side, facing the vehicular traffic flow, purposefully zoning them away from the heavy pedestrian activity and noise of the boulevard to ensure a calm environment.",
   "z.cap.function": "Function diagram — programme distribution by floor.",
   "z.cap.terrace": "Terrace diagram — carrying greenery to the upper levels.",
-  "z.cap.facade": "Facade solid–void diagram.",
   "z.cap.sectionpersp": "Sectional perspective — long section.",
 
   "z.c6.label": "Interiors",
@@ -253,14 +213,122 @@ window.DK_EN = {
   "z.cap.hall": "The multi-purpose hall.",
   "z.cap.stair": "Internal circulation and indoor courtyard.",
   "z.cap.social": "Shared social space linking the floors.",
-
-  "z.c7.label": "Drawings",
-  "z.cap.section": "Longitudinal section.",
-  "z.cap.section2": "Cross section.",
-  "z.cap.elev1": "Front elevation.",
-  "z.cap.elev2": "Side elevation.",
-  "z.cap.plan05": "Fifth floor plan — clubs and terraces.",
   "z.cap.model": "Physical model.",
 
-  "z.pagerAll": "Project archive"
+  "z.pagerAll": "Project archive",
+
+  /* ======================================================================
+     Real projects. Turkish lives in each project HTML; these are the
+     English equivalents. Design texts translated from the studio's own
+     Turkish project documents in VERI/2026_WEB SİTESİ/.
+     ====================================================================== */
+
+  /* --- Yeşilbayır House --- */
+  "yesilbayir.cizimler.f1": "Site — the house within its plot and garden.",
+  "yesilbayir.cizimler.f2": "Ground floor plan; garden, parking and main entrance.",
+  "yesilbayir.cizimler.f3": "First floor plan.",
+  "yesilbayir.func.v": "Housing, Villa",
+  "yesilbayir.gorseller.f1": "Corner view; the upper floor sitting on a stone base.",
+  "yesilbayir.gorseller.f2": "Garden elevation — deep eaves and balcony.",
+  "yesilbayir.gorseller.label": "Images",
+  "yesilbayir.kicker": "Döşemealtı, Antalya — 2026",
+  "yesilbayir.loc.v": "Döşemealtı, Antalya, 2026",
+  "yesilbayir.status.v": "Permit Stage",
+  "yesilbayir.title": "Yeşilbayır House",
+
+  /* --- Akas Çamlıca Interior Design --- */
+  "akas.func.v": "Interior design",
+  "akas.kicker": "Üsküdar, Istanbul — 2023",
+  "akas.loc.v": "Üsküdar, Istanbul, 2023",
+  "akas.mutfak.f1": "Kitchen — island counter and dining table.",
+  "akas.mutfak.f2": "Kitchen, seen from the window side.",
+  "akas.mutfak.label": "Kitchen",
+  "akas.status.v": "Construction Completed",
+  "akas.title": "Akas Çamlıca Interior Design",
+  "akas.yasama.f1": "Living room — dining area and the elevation opening onto the terrace.",
+  "akas.yasama.f2": "Bathroom — timber panelling and natural stone.",
+  "akas.yasama.label": "Living Space",
+  "akas.yatak.f1": "Bedroom — dressing area and balcony.",
+  "akas.yatak.f2": "Bedroom; timber panelling and seating corner.",
+  "akas.yatak.label": "Bedroom",
+
+  /* --- Detached House in Ordu --- */
+  "ordu.func.v": "Housing, Detached House",
+  "ordu.gorseller.f1": "The house within its plot and its relationship to the garden.",
+  "ordu.gorseller.label": "Images",
+  "ordu.kicker": "Fatsa, Ordu — 2021",
+  "ordu.loc.v": "Fatsa, Ordu, 2021",
+  "ordu.status.v": "Completed",
+  "ordu.title": "Detached House in Ordu",
+
+  /* --- Merzifon Business and Life Centre --- */
+  "merzifon.cephe.k": "A Reading of the Timber Frame",
+  "merzifon.cephe.label": "Facade Composition",
+  "merzifon.cephe.p1": "The historic urban fabric of Anatolia took shape through tradition, climate and the practical knowledge that experience brings. Traditional Anatolian architecture is made of a garden, a courtyard and the rooms that surround it. The facades of those rooms are as functional as they can be: attuned to their surroundings, with inside and outside completing one another.",
+  "merzifon.cephe.p2": "Read in that light, the building envelope here is an interpretation of the timber frame system of traditional Anatolian architecture.",
+  "merzifon.cephe.p3": "The ground floors, as the programme demands, are as outward-looking and transparent as possible, while the street facades above are suited to the climate, bound up with the building's use, and local in character. Where those upper levels face the courtyard they are kept transparent, so they belong to the life of the courtyard.",
+  "merzifon.cephedia.f1": "From the facade character of the traditional timber frame, through linear abstraction, to reinterpretation.",
+  "merzifon.cephedia.label": "Facade Abstraction",
+  "merzifon.func.v": "Retail and Office",
+  "merzifon.gorseller.f1": "Looking from Sepetçi Street towards Hal Street.",
+  "merzifon.gorseller.f2": "From the activity square towards the entrance of the passage.",
+  "merzifon.gorseller.f3": "The foyer and the multi-purpose hall.",
+  "merzifon.gorseller.f4": "The courtyard.",
+  "merzifon.kicker": "Merzifon, Amasya — 2017",
+  "merzifon.kullanim.c1": "Meeting, gathering and dispersing.",
+  "merzifon.kullanim.c2": "Exhibition.",
+  "merzifon.kullanim.c3": "Market.",
+  "merzifon.kullanim.c4": "Concert.",
+  "merzifon.kullanim.label": "Use Scenarios",
+  "merzifon.kutle.c1": "The footprint of the existing building.",
+  "merzifon.kutle.c2": "Forming the square and lightening the mass.",
+  "merzifon.kutle.c3": "Retail, the lifelong learning centre and the activity square.",
+  "merzifon.kutle.c4": "Offices, and the courtyard defined.",
+  "merzifon.kutle.c5": "Distribution of the functions across the floors.",
+  "merzifon.kutle.c6": "Fragmenting the mass.",
+  "merzifon.kutle.label": "Massing Development",
+  "merzifon.loc.v": "Merzifon, Amasya, 2017",
+  "merzifon.planlar.f1": "Site plan.",
+  "merzifon.planlar.f2": "Ground floor plan — 756 m².",
+  "merzifon.planlar.label": "Plans",
+  "merzifon.status.v": "Competition, Participant",
+  "merzifon.title": "Merzifon Business and Life Centre",
+  "merzifon.yaklasim.k": "Belonging to the City",
+  "merzifon.yaklasim.label": "General Approach",
+  "merzifon.yaklasim.p1": "Rather than merely asserting itself within its own building plot, the proposal is concerned with belonging firmly to the life and the historic fabric of its city. The passages at ground level and the courtyard on the upper ground level are permanently open to the public — places the townspeople can use and spend time in at any hour.",
+  "merzifon.yaklasim.p2": "Through the design process the public configuration, the urban scale, the distribution of functions and the composition of the facades were the components that shaped the project.",
+
+  /* --- Tekirdağ Süleymanpaşa Municipality Building --- */
+  "tekirdag.func.v": "Office, Public Building",
+  "tekirdag.gorseller.f1": "The public green space opening towards the sea.",
+  "tekirdag.gorseller.f2": "The monumental service mass and the social spaces before it.",
+  "tekirdag.gorseller.f3": "Looking towards the building from the green space.",
+  "tekirdag.gorseller.f4": "The conference entrance and the amphitheatre courtyard.",
+  "tekirdag.gorseller.f5": "The retail spaces and the descent into the courtyard.",
+  "tekirdag.gorseller.f6": "Light entering through a void opened in the sunken areas.",
+  "tekirdag.gorseller.f7": "Physical model.",
+  "tekirdag.gorseller.label": "Images",
+  "tekirdag.kentsel.f1": "Urban analysis — the site between town, conservation area and green axis.",
+  "tekirdag.kentsel.f2": "Site plan.",
+  "tekirdag.kentsel.label": "Urban Configuration",
+  "tekirdag.kicker": "Süleymanpaşa, Tekirdağ — 2017",
+  "tekirdag.loc.v": "Süleymanpaşa, Tekirdağ, 2017",
+  "tekirdag.peyzaj.k": "Streets and Courtyards",
+  "tekirdag.peyzaj.label": "Connections to the City",
+  "tekirdag.peyzaj.p1": "The pedestrian axis in the historic fabric to the west of the site continues onto the site as a street that works together with the social spaces; the green area to its west is tied into the site by a second street, again paired with the retail spaces, and turns with the slope into public green space towards the west.",
+  "tekirdag.peyzaj.p2": "North–south links are made across the green areas at intervals, so that the social spaces exist not as masses on the site but as living public space working with the ground. Those north–south links serve as social space as much as circulation.",
+  "tekirdag.peyzaj.p3": "Daylight reaches these spaces both through those courtyard-like links and through voids opened in the areas set into the ground.",
+  "tekirdag.status.v": "Competition, Participant",
+  "tekirdag.title": "Tekirdağ Süleymanpaşa Municipality Building",
+  "tekirdag.yaklasim.k": "A Permeable Edge",
+  "tekirdag.yaklasim.label": "General Approach",
+  "tekirdag.yaklasim.p1": "The site was studied at the scale of the city, where it proved to be a triangulation point between the town, the conservation area and the green axis. Following that reading, it was decided to design the site as a permeable edge between those three fabrics.",
+  "tekirdag.yaklasim.p2": "The programme was first divided under two headings — municipal service units and social units. The service units were to form a single monumental mass for the city; the social units were to spread across the whole site, open to public use and able to work entirely independently of the offices.",
+  "tekirdag.yaklasim.p3": "So the service units became one gathered, monumental building, while the social units follow the slope of the ground and spread across it as open, semi-open and enclosed public spaces that can work interactively.",
+
+  /* ======================================================================
+     Real projects. Turkish lives in each project HTML; these are the
+     English equivalents. Design texts translated from the studio's own
+     Turkish project documents in VERI/2026_WEB SİTESİ/.
+     ====================================================================== */
 };

@@ -541,6 +541,16 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-bottom: 1px solid var(--line);
   margin-bottom: clamp(2rem, 5vw, 3.5rem);
 }
+/* Page title sits at the left of the row, categories pushed to the right */
+.filters__title { margin: 0 auto 0 0; }
+
+/* Narrow screens: the categories no longer fit on one line beside the title,
+   and letting them wrap leaves the last one orphaned. Put the title on its own
+   line and let the categories wrap as a group under it. */
+@media (max-width: 48rem) {
+  .filters { row-gap: 1rem; }
+  .filters__title { flex: 0 0 100%; margin: 0; }
+}
 .filters button {
   font-family: var(--font-display);
   font-size: 0.625rem;
@@ -581,6 +591,51 @@ ul { margin: 0; padding: 0; list-style: none; }
   .split--even { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+/* Studio intro — office photograph beside the text.
+   The image column is capped in rem rather than given a fraction, so the
+   photograph stays a measured block on wide screens instead of growing with
+   the viewport the way a full-bleed hero would. */
+.studio-intro {
+  display: grid;
+  /* Stated rather than implicit, as elsewhere in this file: the single column
+     holds an image, and minmax(0, …) keeps its intrinsic width out of the
+     track's min-content sizing. */
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 2.5rem);
+}
+@media (min-width: 62rem) {
+  .studio-intro {
+    grid-template-columns: minmax(0, 30rem) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+  }
+}
+/* Mirror of the above for the founder block: text first, portrait after.
+   A single person in the .team card grid leaves an obvious hole where the
+   second and third cards would be, so the portrait sits beside the text. */
+@media (min-width: 62rem) {
+  .studio-intro--flip { grid-template-columns: minmax(0, 1fr) minmax(0, 22rem); }
+}
+
+.studio-intro__media {
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+.studio-intro__media img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+/* The office frame is a warm orange against cold glass; easing the saturation
+   lets it sit next to the logo blue without competing with it. */
+.studio-intro__media--office img { filter: saturate(0.88); }
+
+/* Square, as the source portrait is — cropping it to 3/4 cut the sides off.
+   Capped in rem so it never fills a phone's whole width. */
+.studio-intro__media--portrait { max-width: 22rem; }
+.studio-intro__media--portrait img { aspect-ratio: 1; }
+
 /* Definition list — services, credits, awards */
 .dl { border-top: 1px solid var(--line); }
 .dl__row {
@@ -594,6 +649,25 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .dl__row:hover .dl__t { color: var(--blue); }
 .dl__t { transition: color 0.45s var(--swift); }
+
+/* Fields of work, laid out across the page rather than down it.
+   Each column carries its own top hairline, so the four rules read as one
+   measured band — the same device as the mass sequence step bar. */
+.fields {
+  display: grid;
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 40rem) { .fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 62rem) { .fields { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+.fields__col {
+  display: grid;
+  gap: 0.7rem;
+  align-content: start;
+  border-top: 1px solid var(--line);
+  padding-top: clamp(0.9rem, 1.6vw, 1.25rem);
+}
 
 /* Awards / press lines */
 .lines { border-top: 1px solid var(--line); }
@@ -808,7 +882,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (min-width: 56rem) {
   .foot__top { grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr)); }
 }
-.foot__brand img { height: 2rem; width: auto; margin-bottom: 1.5rem; }
+/* No margin under the logo: nothing follows it any more. The blurb that used to
+   sit there was removed — the footer carries the logo and the two link columns,
+   nothing else. */
+.foot__brand img { height: 2rem; width: auto; }
 .foot__col { display: grid; gap: 0.55rem; align-content: start; }
 .foot__col .label { margin-bottom: 0.5rem; }
 .foot__bottom {
@@ -874,9 +951,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 .plate img { width: 100%; height: auto; }
 .plate--pad { padding: clamp(0.75rem, 2vw, 2rem); }
 
-/* Letterboxes a drawing to 16:9 so it lines up with a photo beside it */
-.plate--wide { aspect-ratio: 16 / 9; display: grid; place-items: center; }
-.plate--wide img { width: 100%; height: 100%; object-fit: contain; }
+/* .plate--wide removed: it letterboxed a drawing to 16:9 so it would line up
+   with whatever sat beside it, but project pages now align plates by giving
+   them all one height. The two together fought — a definite height plus
+   aspect-ratio derives the width, which came out 427px inside a 390px column
+   and pushed the page sideways on a phone. */
 
 figure.fig { margin: 0; }
 figure.fig figcaption {
@@ -887,16 +966,228 @@ figure.fig figcaption {
 }
 figure.fig figcaption .num { flex: 0 0 auto; }
 
-/* Two drawings side by side */
+/* Two drawings side by side.
+   minmax(0, …) rather than a plain 1fr: a bare fr track takes its floor from the
+   item's min-content, and an image sized in percentages contributes its full
+   intrinsic width there — 2400px of it. */
 .dwg-pair {
   display: grid;
   gap: clamp(1rem, 2.2vw, 2rem);
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
 }
-@media (min-width: 56rem) { .dwg-pair { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 56rem) { .dwg-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
-/* ---------- Mass development sequence ---------- */
-.massfilm { display: grid; gap: 1.5rem; }
+/* Lone figures are handled in the project-page block below: photograph groups
+   run one per row anyway, and a single drawing is centred rather than stretched.
+   The old :only-child img { width: 100% } rule outranked the plate's own sizing
+   and stretched a lone drawing out of shape. */
+
+/* ==========================================================================
+   Project pages — image-led
+   Every image used to sit at half the column width with its own proportions,
+   so rows ended ragged, odd figures left holes, and the whole page read as
+   scattered pieces. Photographs now run the full width, drawings sit in plates
+   of one shared height, and the vertical gaps are tighter than elsewhere on the
+   site so the sequence holds together.
+   ========================================================================== */
+
+/* Chapters follow one another closely — this is one sequence, not a set of
+   separate pages stacked up. */
+[data-page="project"] .section { padding-block: clamp(2.75rem, 6vh, 5rem); }
+
+/* ---------- One left edge ----------
+   Measured at 1440px the page had three of them: images, prose and the page
+   title began at the 65px gutter, chapter headings at 98px and caption text at
+   96px — both pushed in by the number sitting before them. The numbers now sit
+   above their text, as they do in the studio page's numbered columns, and every
+   line in the column starts at the same place. */
+[data-page="project"] .chapter {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
+}
+[data-page="project"] figure.fig figcaption { display: block; }
+[data-page="project"] figure.fig figcaption .num { margin-right: 0.7rem; }
+
+/* ---------- Two prose columns side by side ----------
+   Rows are subgrid so the two headings share one row and the two paragraphs
+   share the next: the paragraphs start on the same line even when one heading
+   wraps to two lines and the other does not. */
+.text-pair {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 56rem) {
+  .text-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    /* No row gap once the blocks sit side by side — the space between a heading
+       and its paragraph is the paragraph's own margin. The gap declared above
+       is what separates the two blocks when they stack on a phone. */
+    row-gap: 0;
+  }
+  .text-pair > * {
+    grid-row: span 2;
+    display: grid;
+    grid-template-rows: subgrid;
+    align-content: start;
+  }
+}
+
+/* ---------- Prose with something beside it ----------
+   A text column runs to a reading measure and leaves the rest of the row empty;
+   this puts a second block in that space. Tops aligned, not stretched, so a
+   short text does not drag its neighbour's height around. */
+.aside-pair {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+@media (min-width: 62rem) {
+  .aside-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* One gap between a block of text and the images under it, whichever component
+   follows — zabjelo carried three different hand-set values for this. */
+[data-page="project"] .split + .dwg-pair,
+[data-page="project"] .split + .fig,
+[data-page="project"] .split + .gallery,
+[data-page="project"] .split + .massfilm { margin-top: clamp(1.75rem, 4vw, 2.75rem); }
+[data-page="project"] .dwg-pair {
+  --pair-gap: clamp(0.6rem, 1.4vw, 1.15rem);
+  --plate-h: clamp(15rem, 26vw, 26rem);
+  gap: var(--pair-gap);
+}
+
+/* Three drawings across, for a set meant to be read together — the three
+   Yeşilbayır plans. The frames are taller than in a two-up row: two of those
+   plans are upright (ratio 0.65), so a narrower column with more height gives
+   the drawing itself more room, not less.
+
+   Below 62rem the class does nothing and the group falls back to the ordinary
+   layout: stacked on a phone, two-up with the third centred in the narrow band
+   between 56rem and 62rem. Only from 62rem is there room for three. */
+@media (min-width: 62rem) {
+  [data-page="project"] .dwg-pair--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    --plate-h: clamp(18rem, 30vw, 32rem);
+  }
+}
+
+/* A group holding photographs and no drawing plate runs one per row, full
+   width. Selected with :has() so the markup needs no extra class — a plate is
+   what tells a drawing apart from a render. */
+@media (min-width: 56rem) {
+  [data-page="project"] .dwg-pair:not(:has(.plate)) { grid-template-columns: minmax(0, 1fr); }
+}
+[data-page="project"] .dwg-pair:not(:has(.plate)) .fig img {
+  /* width, not max-width: the smaller renders would otherwise stop short of
+     the column and break the left edge the captions align to. */
+  width: 100%;
+  /* Backstop for the odd portrait frame, which would otherwise run to twice the
+     screen height. contain, not cover: when max-height clamps the box shorter
+     than the frame's own proportions, cover would silently crop the render —
+     here it is centred with space around it instead. */
+  max-height: 88svh;
+  object-fit: contain;
+}
+
+/* Consecutive groups inside one chapter — a full-width run followed by framed
+   images, say — keep the same gap as the figures within them, so a change of
+   row treatment does not read as the start of a new section. */
+[data-page="project"] .dwg-pair + .dwg-pair { margin-top: clamp(0.6rem, 1.4vw, 1.15rem); }
+
+/* Photographs in a run, cropped to one shape so the column keeps a steady beat
+   on the way down. Opt-in, and only for sets already close in proportion:
+   Merzifon's renders sit between 1.63 and 1.79, so 16:9 trims at most 9% off a
+   height. Panoramic frames must NOT get this — Tekirdağ's run to 3.07 and
+   Yeşilbayır has one at 2.17, where the crop would throw away a fifth of the
+   picture. Those keep their own proportions and therefore their own heights. */
+[data-page="project"] .dwg-pair--uniform:not(:has(.plate)) .fig img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* A single wide sheet on its own — Merzifon's façade abstraction strip is 5:1,
+   with captions small enough to need the whole column. It runs full width and
+   its frame follows the drawing's own height rather than the shared one; in a
+   half-width frame of standard height it would be a sliver of ink in a field of
+   white. */
+[data-page="project"] .dwg-pair--sheet { grid-template-columns: minmax(0, 1fr); }
+[data-page="project"] .dwg-pair--sheet .plate { height: auto; display: block; padding: 0; }
+[data-page="project"] .dwg-pair--sheet .plate img { width: 100%; height: auto; max-height: none; }
+
+/* Drawings: one shared plate height, whatever the sheet's proportions.
+   These run from 0.62 (stacked plans) to 5.3 (long elevations), so a shared
+   aspect-ratio would either crop them or leave enormous holes. A shared height
+   lines the rows up — and therefore the captions — while each drawing keeps
+   its own shape. Flex, not grid: a percentage max-height on a grid item whose
+   track is auto is a cyclic percentage and gets dropped (see .lb__stage). */
+[data-page="project"] .plate {
+  height: var(--plate-h, clamp(15rem, 26vw, 26rem));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.5rem, 1.2vw, 1.1rem);
+}
+[data-page="project"] .plate img {
+  width: auto; height: auto;
+  max-width: 100%; max-height: 100%;
+  object-fit: contain;
+}
+
+/* An odd drawing at the end of a group is centred at the width of the ones
+   above it. Left in place it leaves half the row visibly empty; stretched
+   across the row the plate is mostly white, since a tall plan letterboxed into
+   a full-width frame barely grows. Only drawings need this — photograph groups
+   are already one per row. */
+@media (min-width: 56rem) {
+  [data-page="project"] .dwg-pair > .fig:last-child:nth-child(odd):has(.plate) {
+    grid-column: 1 / -1;
+    width: calc((100% - var(--pair-gap)) / 2);
+    margin-inline: auto;
+  }
+}
+/* Exceptions to the centring rule, and they have to come after it rather than up
+   with the rest of each modifier's declarations: the selectors have identical
+   specificity, so whichever is written last wins. */
+@media (min-width: 56rem) {
+  /* A lone sheet keeps the full width — that is the whole point of --sheet. */
+  [data-page="project"] .dwg-pair--sheet > .fig:last-child:nth-child(odd):has(.plate) {
+    grid-column: 1 / -1;
+    width: auto;
+    margin-inline: 0;
+  }
+}
+@media (min-width: 62rem) {
+  /* In a three-column row the third figure belongs in the third column. */
+  [data-page="project"] .dwg-pair--3 > .fig:last-child:nth-child(odd):has(.plate) {
+    grid-column: auto;
+    width: auto;
+    margin-inline: 0;
+  }
+}
+
+/* The interior grid keeps the two-up rhythm — a welcome change of pace after a
+   run of full-width frames — but at the proportions the renders were made in.
+   The 4/3 default was cropping a quarter off the sides of every 16:9 interior. */
+[data-page="project"] .gallery { gap: clamp(0.6rem, 1.4vw, 1.15rem); }
+[data-page="project"] .gallery figure img { aspect-ratio: 16 / 9; }
+
+/* Prose keeps the same left edge as the images. In the two-column form the
+   paragraphs began a fifth of the way across while every image started at the
+   margin, which is what made the text read as unrelated to the pictures. */
+@media (min-width: 62rem) {
+  [data-page="project"] .split { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+}
+
+/* ---------- Mass development sequence ----------
+   Capped rather than run to the full shell width: at 1680px the stage came out
+   around 1580 x 1035, taller than most screens and far bigger than the drawings
+   it sits among. These frames are diagrams, not renders. */
+.massfilm { display: grid; gap: 1.5rem; max-width: 48rem; }
 
 .massfilm__stage {
   position: relative;
@@ -923,7 +1214,9 @@ figure.fig figcaption .num { flex: 0 0 auto; }
   z-index: 2;
   font-family: var(--font-display);
   font-weight: 200;
-  font-size: clamp(1.75rem, 3.4vw, 3rem);
+  /* Held down to suit the capped stage — it no longer grows with the viewport,
+     so a 3rem numeral would now sit far too heavy on the frame. */
+  font-size: clamp(1.5rem, 3.4vw, 2.25rem);
   line-height: 1;
   letter-spacing: -0.03em;
   color: var(--ink);
@@ -1100,6 +1393,13 @@ figure.fig figcaption .num { flex: 0 0 auto; }
 .lb__stage {
   position: relative;
   display: grid;
+  /* Tracks stated as fr rather than left implicit. An implicit auto row takes
+     its size from the image, while the image's max-height: 100% wants to
+     resolve against the row — a cyclic percentage, which the browser drops.
+     A portrait frame then rendered at full height and ran off the screen on
+     any tall window. fr tracks resolve from the container, breaking the cycle. */
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   place-items: center;
   padding-inline: clamp(3.25rem, 8vw, 7rem);
   min-height: 0;
