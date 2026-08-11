@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/main.css?v=2">
 </head>
 <body data-page="studio" data-title-en="Studio — Demiröz ✕ Koç">
 
@@ -61,14 +61,12 @@
 
 <main id="main">
 
-  <!-- ---------- Intro ---------- -->
-  <!-- Kurulus cumlesi asagidaki ofis paragrafinin ilk cumlesi; burada tekrar
-       etmesin diye baslikta yalniz kisaltilmis cumle duruyor. -->
-  <section class="page-head shell">
-    <p class="label" data-reveal data-i18n="studio.label">Stüdyo</p>
-    <h1 class="h1" style="margin-top:1.5rem; max-width:24ch">
-      <span data-reveal-mask><span data-i18n="studio.title">Mimarlığın tüm alanlarında, her ölçekte çalışıyoruz.</span></span>
-    </h1>
+  <!-- ---------- Intro ----------
+       Buyuk baslik cumlesi kaldirildi (ofis yazisindan kisalttigim bir
+       derlemeydi). Sayfa basliksiz kalmasin diye "Stüdyo" etiketi h1 oldu —
+       gorunusu ayni kucuk etiket, projeler.html'deki kalibin aynisi. -->
+  <section class="page-head shell" style="padding-bottom:0">
+    <h1 class="label label--ink" data-reveal data-i18n="studio.label">Stüdyo</h1>
   </section>
 
   <!-- Girise tam genislikte bir proje renderi konmuyor; stüdyo sayfasi kendi
@@ -82,8 +80,8 @@
         <img src="assets/img/studyo/ofis.jpg" alt="Cam bölmeler ardında bir çalışma alanı" loading="lazy">
       </figure>
       <div>
-        <p class="label label--ink" data-reveal data-i18n="studio.approachLabel">Ofis</p>
-        <div style="margin-top:1.25rem">
+        <!-- "Ofis" basligi kaldirildi; paragraf dogrudan fotografin yaninda. -->
+        <div>
           <p class="body-text" data-reveal data-reveal-delay="1" data-i18n="studio.p1">Demiröz &amp; Koç Mimarlık, 2026 yılında Ankara'da kurulmuş ve faaliyetlerine başlamıştır. Genç ve dinamik yapısıyla, mimarlığın tüm alanlarında iş üretebilme ve farklı ölçeklerdeki projelerde hızlı organize olabilme esnekliğine sahip olan firma; kentsel tasarım ölçeğinden mimarlık ölçeğine, iç mimari tasarımdan uygulamaya kadar geniş bir yelpazede hizmet sunmaktadır.</p>
           <p class="body-text" data-reveal data-i18n="studio.p2">Demiröz &amp; Koç Mimarlık; konut, karma kullanım, otel, eğitim yapıları, sosyal ve kültürel tesisler, ofis, ticaret binaları ve iç mekân tasarımı gibi çok çeşitli işlevlerde ve nitelikte mimari projelere aynı titizlikle yaklaşarak tasarım çözümleri üretmektedir.</p>
         </div>
@@ -149,21 +147,6 @@
        bir odul listesi tutarsiz olurdu. Gercek odul bilgisi geldiginde
        .lines kalibiyla geri eklenebilir. -->
 
-  <section class="band">
-    <div class="shell band__row" style="padding-block:var(--section)">
-      <div>
-        <p class="label" data-reveal data-i18n="band.label">Yeni İşler</p>
-        <h2 class="h1" style="margin-top:1.25rem" data-reveal data-reveal-delay="1" data-i18n="band.title">Bir arsanız, bir yapınız ya da yalnızca bir fikriniz mi var? Konuşalım.</h2>
-      </div>
-      <div data-reveal data-reveal-delay="2">
-        <a class="btn" href="iletisim.html">
-          <span data-i18n="cta.startProject">Projeye Başla</span>
-          <svg viewBox="0 0 24 8" width="24" aria-hidden="true" style="overflow:visible"><line x1="0" y1="4" x2="20" y2="4" stroke="currentColor" stroke-width="1"/><polyline points="16,0.5 20,4 16,7.5" fill="none" stroke="currentColor" stroke-width="1"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <footer class="site-foot">
@@ -171,18 +154,27 @@
     <div class="foot__top">
       <div class="foot__brand">
         <img src="assets/logo-tr-w.png" data-src-tr="assets/logo-tr-w.png" data-src-en="assets/logo-en-w.png" alt="Demiröz ✕ Koç">
+        <a class="alink foot__cta" href="iletisim.html">
+          <span data-i18n="cta.startProject">Projeye Başla</span>
+          <svg viewBox="0 0 24 8" aria-hidden="true"><line class="a-shaft" x1="0" y1="4" x2="20" y2="4"/><polyline class="a-head" points="16,0.5 20,4 16,7.5"/></svg>
+        </a>
       </div>
       <div class="foot__col">
+        <!-- Iletisim baglantisi bu kolondan kaldirildi: logonun altindaki
+             "Projeye Başla" zaten iletisim sayfasina gidiyor. -->
         <p class="label" data-i18n="foot.navLabel">Menü</p>
         <a class="link" href="projeler.html" data-i18n="nav.works">Projeler</a>
         <a class="link" href="studyo.html"   data-i18n="nav.studio">Stüdyo</a>
-        <a class="link" href="iletisim.html" data-i18n="nav.contact">İletişim</a>
       </div>
       <div class="foot__col">
         <p class="label" data-i18n="foot.contactLabel">İletişim</p>
         <a class="link" href="mailto:info@demirozkoc.com">info@demirozkoc.com</a>
         <a class="link" href="tel:+905464677696">+90 546 467 76 96</a>
         <a class="link" href="https://www.instagram.com/demiroz_koc_architects/" target="_blank" rel="noopener">Instagram</a>
+        <!-- href bilerek yok: adres gelene kadar satir gorunur ama tiklanmaz.
+             Bos ya da "#" bir href, hicbir yere gitmeyen bozuk bir baglanti
+             olurdu. Adres geldiginde href="..." eklemek yeterli. -->
+        <a class="link" data-i18n="foot.linkedin">LinkedIn</a>
       </div>
     </div>
     <div class="foot__bottom">
@@ -192,7 +184,7 @@
   </div>
 </footer>
 
-<script src="js/i18n.js"></script>
-<script src="js/main.js"></script>
+<script src="js/i18n.js?v=2"></script>
+<script src="js/main.js?v=2"></script>
 </body>
 </html>

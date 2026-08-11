@@ -526,6 +526,9 @@
           ? en
           : 'Teşekkürler — mesajınız bize ulaştı. İki iş günü içinde yanıtlayacağız.';
         note.style.color = 'var(--blue)';
+        /* The note starts hidden so it reserves no space on a page sized to fit
+           one screen; showing it is part of sending. */
+        note.hidden = false;
       }
       form.reset();
     });

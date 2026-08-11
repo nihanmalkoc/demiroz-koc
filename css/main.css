@@ -833,6 +833,68 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .home-contact p + p { margin-top: 0.5rem; }
 
+/* ---------- Contact page: one screen ----------
+   The black footer already carries the address lines, so the page above it is
+   just a heading and three fields. Laying the body out as a column with main
+   flexing means the footer lands at the bottom of the first viewport — visible
+   without scrolling — instead of below the fold. */
+body[data-page="contact"] {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+body[data-page="contact"] > main { flex: 1 0 auto; }
+
+/* If anything is ever left below the body — a viewport taller than 100svh
+   reports, an overscroll bounce — it should read as the footer continuing
+   rather than as a white gap under it. */
+html:has(body[data-page="contact"]) { background: var(--ink); }
+
+.contact-head {
+  /* Clears the fixed header by measuring it rather than guessing: the header is
+     its own vertical padding twice, plus the logo, plus its hairline. Guessing
+     with a vh value went wrong — the header grows with viewport *width* while a
+     vh padding grows with height, and at 1440x900 the two met 18px apart. */
+  padding-top: calc(
+      2 * clamp(1rem, 2.2vh, 1.6rem)     /* .site-head padding-block */
+    + clamp(1.7rem, 3vw, 2.5rem)         /* .brand img height        */
+    + 1px                                /* .site-head border-bottom */
+    + clamp(1.75rem, 4vh, 3rem)          /* clear space under it     */
+  );
+  padding-bottom: clamp(1rem, 2.5vh, 1.75rem);
+}
+/* Two fields side by side from the narrowest useful width, so the form costs
+   one row rather than two and the whole page still fits a short laptop. */
+@media (min-width: 34rem) {
+  body[data-page="contact"] .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body[data-page="contact"] .form-grid .is-full { grid-column: 1 / -1; }
+}
+body[data-page="contact"] .form-grid {
+  max-width: 46rem;
+  gap: clamp(1rem, 2vh, 1.5rem);
+}
+
+/* Footer runs tighter here than elsewhere. On this page the footer *is* the
+   content — the address lines the heading points at — so it has to arrive
+   inside the first screen rather than a scroll below it. */
+body[data-page="contact"] .site-foot {
+  padding-top: clamp(2rem, 4vh, 3rem);
+  padding-bottom: 1rem;
+}
+body[data-page="contact"] .foot__top { padding-bottom: clamp(1.5rem, 3vh, 2.5rem); }
+body[data-page="contact"] .foot__bottom { padding-top: 1rem; }
+
+/* Below 56rem the footer normally stacks all three blocks, which on a phone is
+   taller than the screen on its own. Here the two link columns share a row so
+   the block still lands inside the first screen. */
+@media (max-width: 55.999rem) {
+  body[data-page="contact"] .foot__top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+  }
+  body[data-page="contact"] .foot__brand { grid-column: 1 / -1; }
+}
+
 .map-frame {
   border: 1px solid var(--line);
   background: var(--paper-2);
@@ -842,7 +904,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 .map-frame iframe { width: 100%; height: 100%; border: 0; filter: grayscale(1) contrast(1.05); }
 
 /* ==========================================================================
-   CTA band
+   CTA band — ARTIK KULLANILMIYOR
+   Projeler ve stüdyo sayfalarinin altindaki "Yeni İşler / Bir arsanız…" siyah
+   bolumu kaldirildi: hemen altindaki footer da siyahti, iki blok ust uste
+   biniyordu. Cagri artik footer'da logonun altinda tek bir baglanti
+   (.foot__cta). Kurallar duruyor, baska bir yerde gerekirse hazir.
    ========================================================================== */
 .band {
   background: var(--ink);
@@ -882,10 +948,18 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (min-width: 56rem) {
   .foot__top { grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr)); }
 }
-/* No margin under the logo: nothing follows it any more. The blurb that used to
-   sit there was removed — the footer carries the logo and the two link columns,
-   nothing else. */
 .foot__brand img { height: 2rem; width: auto; }
+
+/* The only thing under the logo: the link into the contact page. It replaces the
+   dark "Yeni İşler" band that used to sit above the footer — same invitation,
+   one element instead of a whole section, and no second dark block stacked on
+   this one. Not present on the contact page itself, where it would link to the
+   page you are already reading. */
+.foot__cta {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  color: rgba(251, 251, 249, 0.62);
+}
+.foot__cta:hover { color: #fff; }
 .foot__col { display: grid; gap: 0.55rem; align-content: start; }
 .foot__col .label { margin-bottom: 0.5rem; }
 .foot__bottom {

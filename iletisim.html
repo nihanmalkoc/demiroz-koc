@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/main.css?v=2">
 </head>
 <body data-page="contact" data-title-en="Contact — Demiröz ✕ Koç">
 
@@ -61,102 +61,41 @@
 
 <main id="main">
 
-  <section class="page-head shell">
-    <p class="label" data-reveal data-i18n="contact.label">İletişim</p>
-    <div class="page-head__row" style="margin-top:1.5rem">
-      <h1 class="h1"><span data-reveal-mask><span data-i18n="contact.title">Projenizden konuşalım.</span></span></h1>
-      <p class="lede" data-reveal data-reveal-delay="1" data-i18n="contact.lede">Bize arsayı, programı ve takviminizi anlatın. Her başvuruyu iki iş günü içinde yanıtlıyoruz.</p>
-    </div>
-  </section>
+  <!-- Tek bolum: "Bize Ulaşın" ve uc alanlik form. Slogan cumlesi, buyuk
+       e-posta blogu, iletisim detay satirlari ve harita kaldirildi — e-posta,
+       telefon ve Instagram alttaki siyah blokta zaten var, ikisi ust uste
+       tekrar ediyordu. Sayfa bir ekrana sigiyor, siyah blok scroll gerektirmeden
+       gorunuyor (bkz. css/main.css icindeki [data-page="contact"] kurallari). -->
+  <section class="contact-head shell">
+    <!-- Ustteki "İletişim" etiketi kaldirildi: menude zaten secili, sayfa
+         basligi da ayni seyi soyluyordu. -->
+    <h1 class="h1"><span data-reveal-mask><span data-i18n="contact.title">Bize Ulaşın</span></span></h1>
 
-  <!-- ---------- Big email ---------- -->
-  <section class="shell section--tight">
-    <p class="label" data-reveal data-i18n="contact.emailLabel">E-posta</p>
-    <a class="big-mail link" href="mailto:info@demirozkoc.com" style="margin-top:1rem" data-reveal data-reveal-delay="1">info@demirozkoc.com</a>
-  </section>
-
-  <hr class="rule">
-
-  <!-- ---------- Details ----------
-       Acik adres gosterilmiyor. Gercek adres geldiginde buraya bir satir
-       ve asagiya harita bolumu geri eklenebilir. -->
-  <section class="shell section--tight">
-    <div class="home-contact" style="margin-top:0; padding-top:0; border-top:0">
-      <div data-reveal>
-        <p class="label label--ink" data-i18n="contact.phoneLabel">Telefon</p>
-        <p><a class="link" href="tel:+905464677696">+90 546 467 76 96</a></p>
-      </div>
-      <div data-reveal data-reveal-delay="1">
-        <p class="label label--ink" data-i18n="contact.studioLabel">Stüdyo</p>
-        <p data-i18n="contact.city">Ankara, Türkiye</p>
-      </div>
-      <div data-reveal data-reveal-delay="2">
-        <p class="label label--ink" data-i18n="contact.socialLabel">Takip Et</p>
-        <p>
-          <a class="link" href="https://instagram.com/demiroz_koc_architects" target="_blank" rel="noopener">Instagram</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- Form ---------- -->
-  <section class="section shell">
-    <div class="sec-head">
-      <p class="label" data-reveal data-i18n="contact.formLabel">Başvuru</p>
-      <div><h2 class="h1" data-reveal data-i18n="contact.formTitle">Proje başvurusu</h2></div>
-    </div>
-
-    <form class="form-grid" id="enquiry" novalidate>
+    <form class="form-grid" id="enquiry" style="margin-top:clamp(1.75rem,4vh,2.75rem)" novalidate>
       <label class="field" data-reveal>
-        <span class="label" data-i18n="f.name">Ad Soyad</span>
-        <input type="text" name="name" required autocomplete="name" data-i18n-ph="f.name.p" placeholder="Adınız ve soyadınız">
-      </label>
-
-      <label class="field" data-reveal data-reveal-delay="1">
         <span class="label" data-i18n="f.email">E-posta</span>
         <input type="email" name="email" required autocomplete="email" data-i18n-ph="f.email.p" placeholder="siz@ornek.com">
       </label>
 
-      <label class="field" data-reveal>
-        <span class="label" data-i18n="f.phone">Telefon (opsiyonel)</span>
+      <label class="field" data-reveal data-reveal-delay="1">
+        <span class="label" data-i18n="f.phone">Telefon</span>
         <input type="tel" name="phone" autocomplete="tel" data-i18n-ph="f.phone.p" placeholder="+90 ___ ___ __ __">
       </label>
 
-      <label class="field" data-reveal data-reveal-delay="1">
-        <span class="label" data-i18n="f.type">Proje tipi</span>
-        <select name="type">
-          <option value="housing"     data-i18n="f.type.housing">Konut</option>
-          <option value="office"      data-i18n="f.type.office">Ofis / çalışma alanı</option>
-          <option value="culture"     data-i18n="f.type.culture">Kültür / kamu</option>
-          <option value="hospitality" data-i18n="f.type.hospitality">Konaklama</option>
-          <option value="renovation"  data-i18n="f.type.reno">Yenileme / koruma</option>
-          <option value="other"       data-i18n="f.type.other">Diğer</option>
-        </select>
-      </label>
-
       <label class="field is-full" data-reveal>
-        <span class="label" data-i18n="f.loc">Konum</span>
-        <input type="text" name="location" data-i18n-ph="f.loc.p" placeholder="Şehir, ilçe">
-      </label>
-
-      <label class="field is-full" data-reveal>
-        <span class="label" data-i18n="f.msg">Proje hakkında</span>
-        <textarea name="message" rows="5" required data-i18n-ph="f.msg.p" placeholder="Biliyorsanız arsa büyüklüğü, program, bütçe aralığı ve takvim."></textarea>
+        <span class="label" data-i18n="f.msg">Mesajınız</span>
+        <textarea name="message" rows="3" required data-i18n-ph="f.msg.p" placeholder="Kısaca yazın."></textarea>
       </label>
 
       <div class="is-full" data-reveal>
         <button class="btn" type="submit">
-          <span data-i18n="f.submit">Başvuruyu Gönder</span>
+          <span data-i18n="f.submit">Gönder</span>
           <svg viewBox="0 0 24 8" width="24" aria-hidden="true" style="overflow:visible"><line x1="0" y1="4" x2="20" y2="4" stroke="currentColor" stroke-width="1"/><polyline points="16,0.5 20,4 16,7.5" fill="none" stroke="currentColor" stroke-width="1"/></svg>
         </button>
-        <p class="small form-note" id="formNote" style="max-width:52ch" data-i18n="f.note">Bu formu göndererek, size yanıt verebilmemiz için bilgilerinizi saklamamıza izin vermiş olursunuz. Bilgileriniz üçüncü kişilerle paylaşılmaz.</p>
+        <p class="small form-note" id="formNote" hidden></p>
       </div>
     </form>
   </section>
-
-  <!-- Harita bolumu kaldirildi: adres gosterilmedigi icin haritanin
-       isaretledigi nokta da anlamsiz kaliyordu (zaten yer tutucu bir
-       konumdu). Gercek adres geldiginde .map-frame kalibiyla geri gelir. -->
 
 </main>
 
@@ -167,16 +106,21 @@
         <img src="assets/logo-tr-w.png" data-src-tr="assets/logo-tr-w.png" data-src-en="assets/logo-en-w.png" alt="Demiröz ✕ Koç">
       </div>
       <div class="foot__col">
+        <!-- Iletisim baglantisi bu kolondan kaldirildi: logonun altindaki
+             "Projeye Başla" zaten iletisim sayfasina gidiyor. -->
         <p class="label" data-i18n="foot.navLabel">Menü</p>
         <a class="link" href="projeler.html" data-i18n="nav.works">Projeler</a>
         <a class="link" href="studyo.html"   data-i18n="nav.studio">Stüdyo</a>
-        <a class="link" href="iletisim.html" data-i18n="nav.contact">İletişim</a>
       </div>
       <div class="foot__col">
         <p class="label" data-i18n="foot.contactLabel">İletişim</p>
         <a class="link" href="mailto:info@demirozkoc.com">info@demirozkoc.com</a>
         <a class="link" href="tel:+905464677696">+90 546 467 76 96</a>
         <a class="link" href="https://www.instagram.com/demiroz_koc_architects/" target="_blank" rel="noopener">Instagram</a>
+        <!-- href bilerek yok: adres gelene kadar satir gorunur ama tiklanmaz.
+             Bos ya da "#" bir href, hicbir yere gitmeyen bozuk bir baglanti
+             olurdu. Adres geldiginde href="..." eklemek yeterli. -->
+        <a class="link" data-i18n="foot.linkedin">LinkedIn</a>
       </div>
     </div>
     <div class="foot__bottom">
@@ -186,7 +130,7 @@
   </div>
 </footer>
 
-<script src="js/i18n.js"></script>
-<script src="js/main.js"></script>
+<script src="js/i18n.js?v=2"></script>
+<script src="js/main.js?v=2"></script>
 </body>
 </html>
