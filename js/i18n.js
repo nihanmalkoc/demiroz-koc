@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DEMİRÖZ ✕ KOÇ — Translations
+   DEMİRÖZ & KOÇ — Translations
    --------------------------------------------------------------------------
    Turkish copy lives in the HTML (so the page is fully readable without JS).
    This file holds only the English equivalents, keyed by `data-i18n`.
@@ -25,7 +25,7 @@ window.DK_EN = {
   "cat.urban": "Urban",
 
   /* --- Home: hero --- */
-  "hero.label": "Architecture & Design — Ankara",
+  "hero.label": "Architecture • Design | Ankara",
 
   /* --- Home: intro, works, services ---
      Bu bolumler anasayfadan kaldirildi (hero slaytı + iletisim kaldi).
@@ -35,7 +35,7 @@ window.DK_EN = {
   "home.introTitle": "Two architects, one way of thinking.",
   "home.introKicker": "Approach",
   "home.introLede": "Every project begins by reading a place, a climate and a way of living. Form is the result of that reading — never its starting point.",
-  "home.introP1": "Demiröz ✕ Koç is a studio that treats architecture and design as parts of a single process. We work with the same attention on the placement of a volume as on a door handle, because the quality of a space is the sum of its relationships, not of its parts.",
+  "home.introP1": "Demiröz &amp; Koç is a studio that treats architecture and design as parts of a single process. We work with the same attention on the placement of a volume as on a door handle, because the quality of a space is the sum of its relationships, not of its parts.",
   "home.introP2": "We prefer to use materials as they are, to reduce detail rather than add to it, and to treat light as the building's primary material. The result: buildings that mature rather than simply age.",
 
   /* --- Home: works --- */
@@ -55,10 +55,8 @@ window.DK_EN = {
   "serv.4.d": "Feasibility, design management and regular site supervision so that design quality survives construction.",
 
   /* --- Footer --- */
-  "foot.navLabel": "Menu",
-  "foot.contactLabel": "Contact",
-  "foot.instagram": "Instagram",
   "foot.linkedin": "LinkedIn",
+  "foot.lockup": "Architecture • Design",
   "foot.rights": "All rights reserved.",
 
   /* --- Works index --- */
@@ -67,17 +65,17 @@ window.DK_EN = {
 
   /* --- Project detail --- */
   "proj.label": "Project",
-  "proj.f.type.v": "Housing — 14 units",
-  "proj.f.loc.v": "Nişantaşı, Istanbul — 2024",
+  "proj.f.type.v": "Housing, 14 units",
+  "proj.f.loc.v": "Nişantaşı, Istanbul, 2024",
   "proj.f.status.v": "Completed",
-  "proj.f.team.v": "Demiröz ✕ Koç with Studio Tektonik (structure)",
+  "proj.f.team.v": "Demiröz &amp; Koç with Studio Tektonik (structure)",
   "proj.briefLabel": "Brief",
   "proj.briefTitle": "A courtyard turned inside out",
   "proj.p1": "The plot is 14 metres wide and hemmed in on both sides — the condition of most inner-city Istanbul parcels. Rather than push the building to its legal envelope, we carved a vertical void through its centre. Every apartment now opens onto that void as well as onto the street.",
   "proj.p2": "The façade is a single material: hand-laid, lime-washed brick, laid in a stack bond that shifts by half a unit at each floor line. Depth, not decoration, gives the elevation its shadow. Window openings are sized by room, not by pattern, so the composition records the life behind it.",
   "proj.p3": "Inside, the palette is reduced to three elements — oiled oak, pale plaster and blackened steel. Circulation is kept generous and daylit, treated as shared living space rather than leftover area.",
   "proj.quote": "The void does the work of a garden on a plot that has no room for one.",
-  "proj.quoteBy": "Demiröz ✕ Koç",
+  "proj.quoteBy": "Demiröz &amp; Koç",
   "proj.galLabel": "Images",
   "proj.cap1": "Street elevation — the brick shifts half a unit at each floor line.",
   "proj.cap2": "The light well, seen from the third-floor landing.",
@@ -93,13 +91,9 @@ window.DK_EN = {
 
   "studio.servLabel": "Fields of Work",
   "sv.1.t": "Urban Design",
-  "sv.1.d": "An integrated approach reaching from the scale of urban design to the scale of architecture.",
   "sv.2.t": "Architectural Design",
-  "sv.2.d": "Housing, mixed use, hotels, educational buildings, social and cultural facilities, offices and retail buildings.",
   "sv.3.t": "Interior Design",
-  "sv.3.d": "Interiors thought through together with the building envelope.",
-  "sv.4.t": "Construction",
-  "sv.4.d": "Carrying processes from design through to construction, organising quickly across projects of different scales.",
+  "sv.4.t": "Interior Fit-Out",
   "studio.teamLabel": "Founder",
   "team.2.r": "Architect",
   /* Turkish has no gendered third-person pronoun, so the source text carries
@@ -108,6 +102,8 @@ window.DK_EN = {
 
   /* --- Contact --- */
   "contact.title": "Get in Touch",
+  "contact.addressLabel": "Address",
+  "contact.socialLabel": "Social",
   "f.email": "Email",
   "f.email.p": "you@example.com",
   "f.phone": "Phone",
@@ -124,9 +120,9 @@ window.DK_EN = {
      ======================================================================== */
   /* --- Spec block beside the project title --- */
   "s.func": "Function",
-  "s.func.v": "Culture and community centre — healthcare unit, multi-purpose hall, youth and senior clubs",
+  "s.func.v": "Culture and community centre: healthcare unit, multi-purpose hall, youth and senior clubs",
   "s.loc": "Location and Date",
-  "s.loc.v": "Zabjelo, Podgorica — Montenegro, 2026",
+  "s.loc.v": "Zabjelo, Podgorica, Montenegro, 2026",
   "s.site": "Site Area",
   "s.gfa": "Gross Floor Area",
   "s.status": "Status",
@@ -171,14 +167,14 @@ window.DK_EN = {
   "yesilbayir.cizimler.f3": "First floor plan.",
   "yesilbayir.func.v": "Housing, Villa",
   "yesilbayir.gorseller.label": "Images",
-  "yesilbayir.kicker": "Döşemealtı, Antalya — 2026",
+  "yesilbayir.kicker": "Döşemealtı, Antalya, 2026",
   "yesilbayir.loc.v": "Döşemealtı, Antalya, 2026",
   "yesilbayir.status.v": "Permit Stage",
   "yesilbayir.title": "Yeşilbayır House",
 
   /* --- Akas Çamlıca Interior Design --- */
   "akas.func.v": "Interior design",
-  "akas.kicker": "Üsküdar, Istanbul — 2023",
+  "akas.kicker": "Üsküdar, Istanbul, 2023",
   "akas.loc.v": "Üsküdar, Istanbul, 2023",
   "akas.mutfak.label": "Kitchen",
   "akas.status.v": "Construction Completed",
@@ -189,7 +185,7 @@ window.DK_EN = {
   /* --- Detached House in Ordu --- */
   "ordu.func.v": "Housing, Detached House",
   "ordu.gorseller.label": "Images",
-  "ordu.kicker": "Fatsa, Ordu — 2021",
+  "ordu.kicker": "Fatsa, Ordu, 2021",
   "ordu.loc.v": "Fatsa, Ordu, 2021",
   "ordu.status.v": "Completed",
   "ordu.title": "Detached House in Ordu",
@@ -201,7 +197,7 @@ window.DK_EN = {
   "merzifon.cephe.p3": "The ground floors, as the programme demands, are as outward-looking and transparent as possible, while the street facades above are suited to the climate, bound up with the building's use, and local in character. Where those upper levels face the courtyard they are kept transparent, so they belong to the life of the courtyard.",
   "merzifon.cephedia.label": "Facade Abstraction",
   "merzifon.func.v": "Retail and Office",
-  "merzifon.kicker": "Merzifon, Amasya — 2017",
+  "merzifon.kicker": "Merzifon, Amasya, 2017",
   "merzifon.kullanim.label": "Use Scenarios",
   "merzifon.kutle.label": "Massing Development",
   "merzifon.loc.v": "Merzifon, Amasya, 2017",
@@ -220,7 +216,7 @@ window.DK_EN = {
   "tekirdag.kentsel.f1": "Urban analysis — the site between town, conservation area and green axis.",
   "tekirdag.kentsel.f2": "Site plan.",
   "tekirdag.kentsel.label": "Urban Configuration",
-  "tekirdag.kicker": "Süleymanpaşa, Tekirdağ — 2017",
+  "tekirdag.kicker": "Süleymanpaşa, Tekirdağ, 2017",
   "tekirdag.loc.v": "Süleymanpaşa, Tekirdağ, 2017",
   "tekirdag.peyzaj.p1": "The pedestrian axis in the historic fabric to the west of the site continues onto the site as a street that works together with the social spaces; the green area to its west is tied into the site by a second street, again paired with the retail spaces, and turns with the slope into public green space towards the west.",
   "tekirdag.peyzaj.p2": "North–south links are made across the green areas at intervals, so that the social spaces exist not as masses on the site but as living public space working with the ground. Those north–south links serve as social space as much as circulation.",

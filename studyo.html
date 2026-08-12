@@ -3,25 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Stüdyo — Demiröz ✕ Koç</title>
+<title>Stüdyo | Demiröz &amp; Koç</title>
 <meta name="description" content="Demiröz &amp; Koç Mimarlık — 2026'da Ankara'da kurulan mimarlık ofisi. Çalışma alanları ve ekip.">
 <!-- ONIZLEME: icerik yer tutucu oldugu surece arama motorlarina kapali.
      Yayina cikarken bu satiri SILIN. -->
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css?v=2">
 </head>
-<body data-page="studio" data-title-en="Studio — Demiröz ✕ Koç">
+<body data-page="studio" data-title-en="Studio | Demiröz &amp; Koç">
 
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="site-head" id="siteHead">
   <div class="shell site-head__inner">
-    <a class="brand" href="index.html" aria-label="Demiröz ✕ Koç — Anasayfa">
-      <img class="brand__dark"  src="assets/logo-tr.png" data-src-tr="assets/logo-tr.png" data-src-en="assets/logo-en.png" alt="Demiröz ✕ Koç Mimarlık • Tasarım">
+    <a class="brand" href="index.html" aria-label="Demiröz &amp; Koç — Anasayfa">
+      <img class="brand__dark"  src="assets/logo-tr.png" data-src-tr="assets/logo-tr.png" data-src-en="assets/logo-en.png" alt="Demiröz &amp; Koç Mimarlık • Tasarım">
       <img class="brand__light" src="assets/logo-tr-w.png" data-src-tr="assets/logo-tr-w.png" data-src-en="assets/logo-en-w.png" alt="" aria-hidden="true">
     </a>
     <nav class="nav" aria-label="Ana menü">
@@ -49,8 +49,11 @@
     </ul>
   </nav>
   <div class="drawer__foot">
-    <span class="label" data-i18n="foot.instagram">Instagram</span>
-    <a class="link" href="https://www.instagram.com/demiroz_koc_architects/" target="_blank" rel="noopener">@demiroz_koc_architects</a>
+    <!-- Etiket "Instagram" degil "Sosyal": artik iki ag var. Kullanici adi yerine
+         ag adlari yaziyor, footer ile ayni bicim. -->
+    <span class="label" data-i18n="contact.socialLabel">Sosyal</span>
+    <a class="link" href="https://www.instagram.com/demiroz_koc_architects/" target="_blank" rel="noopener">Instagram</a>
+    <a class="link" href="https://www.linkedin.com/company/demi%CC%87r%C3%B6z-x-ko%C3%A7-architecture-design/" target="_blank" rel="noopener" data-i18n="foot.linkedin">LinkedIn</a>
     <span class="lang" role="group" aria-label="Dil / Language">
       <button type="button" data-lang-btn="tr" aria-pressed="true">TR</button>
       <span class="sep" aria-hidden="true">/</span>
@@ -64,60 +67,60 @@
   <!-- ---------- Intro ----------
        Buyuk baslik cumlesi kaldirildi (ofis yazisindan kisalttigim bir
        derlemeydi). Sayfa basliksiz kalmasin diye "Stüdyo" etiketi h1 oldu —
-       gorunusu ayni kucuk etiket, projeler.html'deki kalibin aynisi. -->
-  <section class="page-head shell" style="padding-bottom:0">
-    <h1 class="label label--ink" data-reveal data-i18n="studio.label">Stüdyo</h1>
-  </section>
+       gorunusu ayni kucuk etiket, projeler.html'deki kalibin aynisi.
 
-  <!-- Girise tam genislikte bir proje renderi konmuyor; stüdyo sayfasi kendi
+       Etiket kendi basina bir bolumdeydi; bloklar dusey ortalanmaya gecince
+       ustte tek basina kalip metinden kopuyordu. Simdi metnin ustunde, kendi
+       blogunun etiketi olarak duruyor — asagidaki "Çalışma Alanları" ve
+       "Kurucu" ile ayni kalip. Header bosluğunu .page-head veriyor.
+
+       Girise tam genislikte bir proje renderi konmuyor; stüdyo sayfasi kendi
        fotografiyla acilyor. Gorsel VERI/office background.jpg dosyasindan
-       yatay olarak kirpildi (assets/img/studyo/ofis.jpg).
+       dikey (4:5) kirpildi (assets/img/studyo/ofis.jpg).
        Metin, VERI/2026_WEB SİTESİ/stüdyo/ofis bilgi yazısı.docx dosyasindan
-       oldugu gibi alindi. -->
-  <section class="section shell" style="padding-top:clamp(1.5rem,4vh,3rem)">
-    <div class="studio-intro">
+       oldugu gibi alindi.
+       Sira: once metin, sonra fotograf. Asagidaki Kurucu blogu da ayni sirada,
+       boylece iki blogun gorselleri sayfada ayni dusey hatta oturuyor. -->
+  <section class="page-head shell">
+    <!-- Etiket iki kolonun ustunde, tam genislikte: boylece asagida fotografin
+         ust kenari paragrafin ust kenariyla ayni hizada baslayabiliyor. -->
+    <h1 class="label label--ink" data-reveal data-i18n="studio.label">Stüdyo</h1>
+
+    <!-- Solda ofis fotografi, sagda metin VE Çalışma Alanları. Alanlar daha once
+         ayri bir bolumdeydi; fotograf 4:5 oldugu icin yanindaki metinden ~350px
+         daha uzundu ve o bosluk bos kagit olarak kaliyordu. Alanlar o bosluga
+         girince hem sayfa kisaldi hem de metin kolonunun sag kenari doldu
+         (paragraf 60 karakterde bitiyor, alanlar kolonu sonuna kadar kullaniyor). -->
+    <div class="studio-intro" style="margin-top:1.75rem">
       <figure class="studio-intro__media studio-intro__media--office" data-reveal>
         <img src="assets/img/studyo/ofis.jpg" alt="Cam bölmeler ardında bir çalışma alanı" loading="lazy">
       </figure>
+
       <div>
         <!-- "Ofis" basligi kaldirildi; paragraf dogrudan fotografin yaninda. -->
-        <div>
-          <p class="body-text" data-reveal data-reveal-delay="1" data-i18n="studio.p1">Demiröz &amp; Koç Mimarlık, 2026 yılında Ankara'da kurulmuş ve faaliyetlerine başlamıştır. Genç ve dinamik yapısıyla, mimarlığın tüm alanlarında iş üretebilme ve farklı ölçeklerdeki projelerde hızlı organize olabilme esnekliğine sahip olan firma; kentsel tasarım ölçeğinden mimarlık ölçeğine, iç mimari tasarımdan uygulamaya kadar geniş bir yelpazede hizmet sunmaktadır.</p>
-          <p class="body-text" data-reveal data-i18n="studio.p2">Demiröz &amp; Koç Mimarlık; konut, karma kullanım, otel, eğitim yapıları, sosyal ve kültürel tesisler, ofis, ticaret binaları ve iç mekân tasarımı gibi çok çeşitli işlevlerde ve nitelikte mimari projelere aynı titizlikle yaklaşarak tasarım çözümleri üretmektedir.</p>
+        <p class="body-text" data-reveal data-reveal-delay="1" data-i18n="studio.p1">Demiröz &amp; Koç Mimarlık, 2026 yılında Ankara'da kurulmuş ve faaliyetlerine başlamıştır. Genç ve dinamik yapısıyla, mimarlığın tüm alanlarında iş üretebilme ve farklı ölçeklerdeki projelerde hızlı organize olabilme esnekliğine sahip olan firma; kentsel tasarım ölçeğinden mimarlık ölçeğine, iç mimari tasarımdan uygulamaya kadar geniş bir yelpazede hizmet sunmaktadır.</p>
+        <p class="body-text" data-reveal data-i18n="studio.p2">Demiröz &amp; Koç Mimarlık; konut, karma kullanım, otel, eğitim yapıları, sosyal ve kültürel tesisler, ofis, ticaret binaları ve iç mekân tasarımı gibi çok çeşitli işlevlerde ve nitelikte mimari projelere aynı titizlikle yaklaşarak tasarım çözümleri üretmektedir.</p>
+
+        <!-- Ofis yazisinda gecen olcek ve yapi turleri; uydurma bir sey yok. -->
+        <p class="label label--ink" style="margin-top:clamp(2.25rem,5vh,3.25rem)" data-reveal data-i18n="studio.servLabel">Çalışma Alanları</p>
+        <div class="fields" style="margin-top:1.5rem">
+          <div class="fields__col" data-reveal>
+            <span class="num">01</span>
+            <h3 class="h3" data-i18n="sv.1.t">Kentsel Tasarım</h3>
+          </div>
+          <div class="fields__col" data-reveal data-reveal-delay="1">
+            <span class="num">02</span>
+            <h3 class="h3" data-i18n="sv.2.t">Mimari Proje</h3>
+          </div>
+          <div class="fields__col" data-reveal data-reveal-delay="2">
+            <span class="num">03</span>
+            <h3 class="h3" data-i18n="sv.3.t">İç Mimari Proje</h3>
+          </div>
+          <div class="fields__col" data-reveal data-reveal-delay="3">
+            <span class="num">04</span>
+            <h3 class="h3" data-i18n="sv.4.t">İç Mimari Uygulama</h3>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ---------- Çalışma alanları ----------
-       Ofis yazisinda gecen olcek ve yapi turleri; uydurma bir sey eklenmedi. -->
-  <section class="section shell" style="padding-top:0">
-    <!-- Buyuk "Ne uzerine calisiyoruz" basligi kaldirildi: etiketle ayni seyi
-         soyluyordu ve sayfanin h1'iyle ayni kelimeyi tekrarliyordu. Sayfa
-         boyunca tek bir dizge kaldi: her bloga kucuk bir etiket. -->
-    <p class="label label--ink" data-reveal data-i18n="studio.servLabel">Çalışma Alanları</p>
-
-    <!-- Alt alta dort satir yerine yan yana dort kolon. -->
-    <div class="fields" style="margin-top:1.75rem">
-      <div class="fields__col" data-reveal>
-        <span class="num">01</span>
-        <h3 class="h3" data-i18n="sv.1.t">Kentsel Tasarım</h3>
-        <p class="body-text" data-i18n="sv.1.d">Kentsel tasarım ölçeğinden mimarlık ölçeğine uzanan bütüncül yaklaşım.</p>
-      </div>
-      <div class="fields__col" data-reveal data-reveal-delay="1">
-        <span class="num">02</span>
-        <h3 class="h3" data-i18n="sv.2.t">Mimari Tasarım</h3>
-        <p class="body-text" data-i18n="sv.2.d">Konut, karma kullanım, otel, eğitim yapıları, sosyal ve kültürel tesisler, ofis ve ticaret binaları.</p>
-      </div>
-      <div class="fields__col" data-reveal data-reveal-delay="2">
-        <span class="num">03</span>
-        <h3 class="h3" data-i18n="sv.3.t">İç Mimari Tasarım</h3>
-        <p class="body-text" data-i18n="sv.3.d">Yapının kabuğuyla birlikte düşünülen iç mekân tasarımı.</p>
-      </div>
-      <div class="fields__col" data-reveal data-reveal-delay="3">
-        <span class="num">04</span>
-        <h3 class="h3" data-i18n="sv.4.t">Uygulama</h3>
-        <p class="body-text" data-i18n="sv.4.d">Tasarımdan uygulamaya kadar süreçlerin yürütülmesi; farklı ölçeklerdeki projelerde hızlı organize olabilme.</p>
       </div>
     </div>
   </section>
@@ -127,19 +130,29 @@
        coğul baslik hem de uc kartlik .team gridi bosluk birakiyordu. Ozgecmis
        VERI/2026_WEB SİTESİ/stüdyo/burak koç cv.docx dosyasindan alindi.
        İkinci kurucunun bilgileri gelirse .team gridine donmek dogru olur. -->
-  <section class="section shell" style="padding-top:0">
-    <div class="studio-intro studio-intro--flip">
-      <div>
-        <p class="label label--ink" data-reveal data-i18n="studio.teamLabel">Kurucu</p>
-        <h2 class="h2" style="margin-top:1.1rem" data-reveal>Burak Koç</h2>
-        <!-- Bolum etiketi zaten "Kurucu" oldugu icin unvan satirinda yalnizca
-             "Mimar" duruyor; ozgecmiste gecen tam unvan "Kurucu Ortak, Mimar". -->
-        <p class="label" style="margin-top:.5rem" data-reveal data-i18n="team.2.r">Mimar</p>
-        <p class="body-text" style="margin-top:1.6rem" data-reveal data-reveal-delay="1" data-i18n="team.2.d">2013 yılında Yıldız Teknik Üniversitesi Mimarlık Bölümünden mezun oldu. Mezuniyetinin ardından Türkiye'nin önde gelen mimari tasarım bürolarında 12 yılı aşkın süre çalışarak mesleki tecrübe edindi; bu süreçte ekip ve proje yöneticiliği üstlendi. Farklı ekiplerle birlikte çeşitli ulusal mimari proje yarışmalarına katıldı. 2019 yılında İstanbul Teknik Üniversitesi Mimari Tasarım Tezli Yüksek Lisans Programı'nı tamamladı.</p>
+  <!-- Kendi seridi: hafif farkli bir zemin, tam ekran yuksekligi ve icerigin
+       dikey ortasi. Kaydirinca ekranda baska hicbir sey kalmiyor, bolum ayri bir
+       sayfa gibi aciliyor — daha once ustteki alanlar seritleriyle ayni beyaz
+       zeminde surup gidiyordu, hizalar tesadufi gorunuyordu.
+       "Kurucu" etiketi iki kolonun ustunde, tam genislikte: portrenin ust kenari
+       boylece etiketin ALTINDAN, "Burak Koç" satiriyla ayni hizada basliyor —
+       ustteki ofis blogunun kalibinin aynisi. -->
+  <section class="studio-founder">
+    <div class="shell">
+      <p class="label label--ink" data-reveal data-i18n="studio.teamLabel">Kurucu</p>
+
+      <div class="studio-intro studio-intro--flip" style="margin-top:1.75rem">
+        <div>
+          <h2 class="h2" data-reveal>Burak Koç</h2>
+          <!-- Bolum etiketi zaten "Kurucu" oldugu icin unvan satirinda yalnizca
+               "Mimar" duruyor; ozgecmiste gecen tam unvan "Kurucu Ortak, Mimar". -->
+          <p class="label" style="margin-top:.5rem" data-reveal data-i18n="team.2.r">Mimar</p>
+          <p class="body-text" style="margin-top:1.6rem" data-reveal data-reveal-delay="1" data-i18n="team.2.d">2013 yılında Yıldız Teknik Üniversitesi Mimarlık Bölümünden mezun oldu. Mezuniyetinin ardından Türkiye'nin önde gelen mimari tasarım bürolarında 12 yılı aşkın süre çalışarak mesleki tecrübe edindi; bu süreçte ekip ve proje yöneticiliği üstlendi. Farklı ekiplerle birlikte çeşitli ulusal mimari proje yarışmalarına katıldı. 2019 yılında İstanbul Teknik Üniversitesi Mimari Tasarım Tezli Yüksek Lisans Programı'nı tamamladı.</p>
+        </div>
+        <figure class="studio-intro__media studio-intro__media--portrait" data-reveal data-reveal-delay="1">
+          <img src="assets/img/studyo/burak-koc.jpg" alt="Burak Koç" loading="lazy">
+        </figure>
       </div>
-      <figure class="studio-intro__media studio-intro__media--portrait" data-reveal data-reveal-delay="1">
-        <img src="assets/img/studyo/burak-koc.jpg" alt="Burak Koç" loading="lazy">
-      </figure>
     </div>
   </section>
 
@@ -151,34 +164,47 @@
 
 <footer class="site-foot">
   <div class="shell">
+    <!-- Tek satir: solda logo, ortada sosyal piktogramlar, sagda "Projeye Başla".
+         Ucu de alt hizalı, hepsi telif cizgisinin hemen ustunde duruyor.
+         Menu ve iletisim kolonlari kaldirildi (bkz. css/main.css .site-foot). -->
     <div class="foot__top">
       <div class="foot__brand">
-        <img src="assets/logo-tr-w.png" data-src-tr="assets/logo-tr-w.png" data-src-en="assets/logo-en-w.png" alt="Demiröz ✕ Koç">
+        <img src="assets/logo-tr-w.png" data-src-tr="assets/logo-tr-w.png" data-src-en="assets/logo-en-w.png" alt="Demiröz &amp; Koç">
+      </div>
+
+      <!-- Piktogram: iki ag adini yazmak yerine iki isaret. Ikisi de ayni
+           cizgi kalinliginda, ayni yuvarlak kosede kare icinde — LinkedIn'in
+           dolu resmi logosu Instagram'in cizgisel isaretinin yaninda uyumsuz
+           duruyordu. aria-label ekran okuyucu icin adi tasiyor. -->
+      <div class="foot__social">
+        <a href="https://www.instagram.com/demiroz_koc_architects/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+            <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="4.6"/>
+            <circle cx="12" cy="12" r="4.1"/>
+            <circle cx="17.1" cy="6.9" r="1.05" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/demi%CC%87r%C3%B6z-x-ko%C3%A7-architecture-design/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+            <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="4.6"/>
+            <circle cx="7.6" cy="7.7" r="1.05" fill="currentColor" stroke="none"/>
+            <line x1="7.6" y1="10.6" x2="7.6" y2="16.9"/>
+            <line x1="11.5" y1="10.6" x2="11.5" y2="16.9"/>
+            <path d="M11.5 13.3a2.6 2.6 0 0 1 5.2 0v3.6"/>
+          </svg>
+        </a>
+      </div>
+
         <a class="alink foot__cta" href="iletisim.html">
           <span data-i18n="cta.startProject">Projeye Başla</span>
           <svg viewBox="0 0 24 8" aria-hidden="true"><line class="a-shaft" x1="0" y1="4" x2="20" y2="4"/><polyline class="a-head" points="16,0.5 20,4 16,7.5"/></svg>
         </a>
-      </div>
-      <div class="foot__col">
-        <!-- Iletisim baglantisi bu kolondan kaldirildi: logonun altindaki
-             "Projeye Başla" zaten iletisim sayfasina gidiyor. -->
-        <p class="label" data-i18n="foot.navLabel">Menü</p>
-        <a class="link" href="projeler.html" data-i18n="nav.works">Projeler</a>
-        <a class="link" href="studyo.html"   data-i18n="nav.studio">Stüdyo</a>
-      </div>
-      <div class="foot__col">
-        <p class="label" data-i18n="foot.contactLabel">İletişim</p>
-        <a class="link" href="mailto:info@demirozkoc.com">info@demirozkoc.com</a>
-        <a class="link" href="tel:+905464677696">+90 546 467 76 96</a>
-        <a class="link" href="https://www.instagram.com/demiroz_koc_architects/" target="_blank" rel="noopener">Instagram</a>
-        <!-- href bilerek yok: adres gelene kadar satir gorunur ama tiklanmaz.
-             Bos ya da "#" bir href, hicbir yere gitmeyen bozuk bir baglanti
-             olurdu. Adres geldiginde href="..." eklemek yeterli. -->
-        <a class="link" data-i18n="foot.linkedin">LinkedIn</a>
-      </div>
     </div>
+
     <div class="foot__bottom">
-      <p class="small">© <span id="year">2026</span> Demiröz ✕ Koç Architecture &amp; Design</p>
+      <p class="small">© <span id="year">2026</span> Demiröz &amp; Koç | <span data-i18n="foot.lockup">Mimarlık • Tasarım</span></p>
+      <!-- Sehir iki dilde de ayni, ceviri anahtari yok. -->
+      <p class="small">Ankara, Türkiye</p>
       <p class="small" data-i18n="foot.rights">Tüm hakları saklıdır.</p>
     </div>
   </div>

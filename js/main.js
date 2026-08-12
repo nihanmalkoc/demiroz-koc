@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DEMİRÖZ ✕ KOÇ — Behaviour
+   DEMİRÖZ & KOÇ — Behaviour
    No dependencies. Everything degrades gracefully without JS.
    ========================================================================== */
 (function () {

@@ -261,7 +261,7 @@ Yeni proje eklerken 1300 px'den kısa ya da dikey görseller için aynısını y
 ## Adlandırma notu
 
 Yazılı metinlerde ofis adı **Demiröz & Koç Mimarlık**, logoda ise
-**DEMİRÖZ ✕ KOÇ / MİMARLIK • TASARIM**. Site logoyu görsel olarak, ofis yazısını
+**DEMİRÖZ & KOÇ / MİMARLIK • TASARIM**. Site logoyu görsel olarak, ofis yazısını
 metin olarak kullanıyor. Kurucu adı künye belgelerinde **İrem Demiröz** yazıyor.
 
 ## Yeni proje sayfası ekleme

@@ -603,18 +603,47 @@ ul { margin: 0; padding: 0; list-style: none; }
   grid-template-columns: minmax(0, 1fr);
   gap: clamp(1.75rem, 4vw, 2.5rem);
 }
+/* Intro: photo left at a fixed measure, everything else right.
+   Top-aligned, so the photo's top edge starts on the paragraph's first line.
+   The right column holds the paragraphs AND the fields list — the photo is 4:5
+   and runs about 350px taller than the text alone, and that difference used to
+   be empty paper. With the fields in it the column is used to its full height,
+   and its right edge reaches the gutter (the paragraph stops at its 60ch
+   reading measure, but the fields grid spans the whole column). */
 @media (min-width: 62rem) {
   .studio-intro {
     grid-template-columns: minmax(0, 30rem) minmax(0, 1fr);
-    gap: clamp(2rem, 6vw, 5rem);
+    gap: clamp(2rem, 5vw, 4.5rem);
     align-items: start;
   }
+  /* Founder block: the mirror of the intro, column for column — content left,
+     image right, and the image on the same 30rem measure as the office photo.
+     Both photographs on the page are therefore exactly the same width, which is
+     what makes the pair read as designed rather than as two separate accidents.
+     Top-aligned, so the portrait starts on the "Burak Koç" line, below the
+     "Kurucu" label — the same relationship the office photo has to its
+     paragraph. Centring it put the portrait's top edge above the label. */
+  .studio-intro--flip {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
+    align-items: start;
+  }
+  /* Two by two, not four across: inside the right column four tracks would be
+     ~170px each and every title would wrap. */
+  .studio-intro .fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-/* Mirror of the above for the founder block: text first, portrait after.
-   A single person in the .team card grid leaves an obvious hole where the
-   second and third cards would be, so the portrait sits beside the text. */
-@media (min-width: 62rem) {
-  .studio-intro--flip { grid-template-columns: minmax(0, 1fr) minmax(0, 22rem); }
+
+/* ---------- Founder: its own spread ----------
+   A full screen of its own, on a slightly different ground, with the content on
+   its vertical centre. Scrolled into view it holds the screen alone. Before
+   this it ran on in the same paper as the fields list above it, and the
+   portrait's top edge landed at an arbitrary point among that list's hairlines —
+   which is exactly what reads as undesigned. */
+.studio-founder {
+  background: var(--paper-2);
+  padding-block: clamp(3.5rem, 9vh, 7rem);
+  min-height: 100svh;
+  display: grid;
+  align-content: center;
 }
 
 .studio-intro__media {
@@ -628,12 +657,17 @@ ul { margin: 0; padding: 0; list-style: none; }
   object-fit: cover;
 }
 /* The office frame is a warm orange against cold glass; easing the saturation
-   lets it sit next to the logo blue without competing with it. */
-.studio-intro__media--office img { filter: saturate(0.88); }
+   lets it sit next to the logo blue without competing with it.
+   Portrait, not landscape: the source file is only 736px wide, so a landscape
+   crop could never be shown large enough to hold its side of the page. Upright
+   at 4:5 it has the same presence at half the width. */
+.studio-intro__media--office img { filter: saturate(0.88); aspect-ratio: 4 / 5; }
 
 /* Square, as the source portrait is — cropping it to 3/4 cut the sides off.
-   Capped in rem so it never fills a phone's whole width. */
-.studio-intro__media--portrait { max-width: 22rem; }
+   No max-width: above 62rem the grid's second column already caps it at 30rem,
+   and below that the blocks stack, where a cap only made the portrait narrower
+   than the office photo beside it in the same stack — 480px against 699px on a
+   768px tablet. Both fill the column now. */
 .studio-intro__media--portrait img { aspect-ratio: 1; }
 
 /* Definition list — services, credits, awards */
@@ -833,21 +867,26 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .home-contact p + p { margin-top: 0.5rem; }
 
-/* ---------- Contact page: one screen ----------
-   The black footer already carries the address lines, so the page above it is
-   just a heading and three fields. Laying the body out as a column with main
-   flexing means the footer lands at the bottom of the first viewport — visible
-   without scrolling — instead of below the fold. */
-body[data-page="contact"] {
-  display: flex;
-  flex-direction: column;
-  min-height: 100svh;
-}
-body[data-page="contact"] > main { flex: 1 0 auto; }
+/* ---------- Contact page: page height ----------
+   The black block behaves as it does on the home and studio pages: below the
+   fold, reached by scrolling. It does not get there on its own — the two columns
+   are only about 500px tall, so without help the footer would start halfway up
+   the first screen. Giving main a full screen as its floor pushes the block past
+   the fold, exactly the way the home page's min-height:100svh hero does.
 
-/* If anything is ever left below the body — a viewport taller than 100svh
-   reports, an overscroll bounce — it should read as the footer continuing
-   rather than as a white gap under it. */
+   align-content centres the surplus instead of dumping it under the content, so
+   the extra height reads as margin rather than as an unfinished gap. It is safe
+   on short screens: min-height lets the container grow past a screen when the
+   content needs it, and once it does there is no surplus left to centre. */
+body[data-page="contact"] > main {
+  min-height: 100svh;
+  display: grid;
+  align-content: center;
+}
+
+/* Anything left under the body — an overscroll bounce, a viewport taller than
+   100svh reports — should read as the footer continuing rather than as a white
+   gap below it. */
 html:has(body[data-page="contact"]) { background: var(--ink); }
 
 .contact-head {
@@ -861,38 +900,59 @@ html:has(body[data-page="contact"]) { background: var(--ink); }
     + 1px                                /* .site-head border-bottom */
     + clamp(1.75rem, 4vh, 3rem)          /* clear space under it     */
   );
-  padding-bottom: clamp(1rem, 2.5vh, 1.75rem);
+  padding-bottom: clamp(3rem, 8vh, 6rem);
 }
-/* Two fields side by side from the narrowest useful width, so the form costs
-   one row rather than two and the whole page still fits a short laptop. */
+/* Two fields side by side once there is room for them. */
 @media (min-width: 34rem) {
   body[data-page="contact"] .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   body[data-page="contact"] .form-grid .is-full { grid-column: 1 / -1; }
 }
-body[data-page="contact"] .form-grid {
-  max-width: 46rem;
-  gap: clamp(1rem, 2vh, 1.5rem);
+body[data-page="contact"] .form-grid { gap: clamp(1.25rem, 2.2vw, 1.75rem); }
+
+/* ---------- Contact page: details beside the form ----------
+   Two columns. The details sit on the left at reading size; the form is boxed on
+   the right. The black footer carries the same e-mail and phone, but on this
+   page those details are what the visitor came for — they should not have to
+   read them out of the block at the very bottom. */
+.contact-grid {
+  display: grid;
+  gap: clamp(2rem, 4.5vw, 4.5rem);
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+@media (min-width: 56rem) {
+  .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* Footer runs tighter here than elsewhere. On this page the footer *is* the
-   content — the address lines the heading points at — so it has to arrive
-   inside the first screen rather than a scroll below it. */
-body[data-page="contact"] .site-foot {
-  padding-top: clamp(2rem, 4vh, 3rem);
-  padding-bottom: 1rem;
+.contact-info { display: grid; gap: clamp(1.35rem, 3vh, 2.25rem); align-content: start; }
+/* justify-items keeps the underline animation on .link the width of the text
+   rather than the width of the column. */
+.contact-block { display: grid; gap: 0.4rem; justify-items: start; }
+/* One step above body size: big enough to read as the page's content, small
+   enough that a street address, when there is one, still fits on two lines. */
+.contact-line {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.45;
+  letter-spacing: -0.015em;
 }
-body[data-page="contact"] .foot__top { padding-bottom: clamp(1.5rem, 3vh, 2.5rem); }
-body[data-page="contact"] .foot__bottom { padding-top: 1rem; }
 
-/* Below 56rem the footer normally stacks all three blocks, which on a phone is
-   taller than the screen on its own. Here the two link columns share a row so
-   the block still lands inside the first screen. */
-@media (max-width: 55.999rem) {
-  body[data-page="contact"] .foot__top {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(1.5rem, 4vw, 2.5rem);
-  }
-  body[data-page="contact"] .foot__brand { grid-column: 1 / -1; }
+/* Hairline, no fill. Every surface on the light pages is paper with rules drawn
+   on it — a filled card would be the only panel of its kind on the site. */
+.contact-box {
+  border: 1px solid var(--line);
+  padding: clamp(1.35rem, 2.6vw, 2.25rem);
+}
+.contact-box > .h2 { margin-bottom: clamp(1.1rem, 2.4vh, 1.75rem); }
+/* The 46rem cap below is for a form spanning the page; inside the box the
+   column is already narrow. */
+body[data-page="contact"] .contact-box .form-grid { max-width: none; }
+/* Between these two widths the page is already two columns while the viewport
+   is still narrow, so the box is too tight for two fields side by side. The
+   34rem rule below applies to the viewport, not to this container. */
+@media (min-width: 56rem) and (max-width: 74.999rem) {
+  body[data-page="contact"] .contact-box .form-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 .map-frame {
@@ -931,45 +991,79 @@ body[data-page="contact"] .foot__bottom { padding-top: 1rem; }
 /* ==========================================================================
    Footer
    ========================================================================== */
+/* Three revisions took this from 429px to one line plus a rule. It started as
+   three stacked columns — menu links, contact lines, a logo block — 389px tall
+   on a 900px screen, more than half of it padding: a section, not a footer.
+   Now: logo, two pictograms, one link, all on a single bottom-aligned row.
+   The menu and contact columns are gone; the header carries the nav and the
+   contact page carries the e-mail, phone and address at reading size. */
 .site-foot {
   background: var(--ink);
   color: rgba(251,251,249,0.62);
-  padding-top: clamp(3.5rem, 8vh, 6rem);
-  padding-bottom: 2rem;
+  padding-top: clamp(2rem, 4.5vh, 3.25rem);
+  padding-bottom: 1.25rem;
 }
 .site-foot a { color: rgba(251,251,249,0.62); transition: color 0.4s var(--swift); }
 .site-foot a:hover { color: #fff; }
 .site-foot .label { color: rgba(251,251,249,0.4); }
+
+/* 1fr auto 1fr rather than three auto tracks: only equal outer tracks put the
+   pictograms on the true centre of the page, whatever the logo and the link
+   happen to measure. align-items: end is what makes the logo and the link share
+   a baseline just above the rule, which is the whole point of the row. */
 .foot__top {
   display: grid;
-  gap: clamp(2.5rem, 6vw, 4rem);
-  padding-bottom: clamp(3rem, 7vh, 5rem);
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding-bottom: clamp(0.9rem, 2vh, 1.35rem);
 }
-@media (min-width: 56rem) {
-  .foot__top { grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr)); }
-}
-.foot__brand img { height: 2rem; width: auto; }
-
-/* The only thing under the logo: the link into the contact page. It replaces the
-   dark "Yeni İşler" band that used to sit above the footer — same invitation,
-   one element instead of a whole section, and no second dark block stacked on
-   this one. Not present on the contact page itself, where it would link to the
-   page you are already reading. */
+.foot__brand img { height: 2rem; width: auto; display: block; }
+.foot__social { display: flex; align-items: center; gap: 1.15rem; }
+.foot__social svg { width: 1.35rem; height: 1.35rem; display: block; }
+/* The link into the contact page. It replaces the dark "Yeni İşler" band that
+   used to sit above the footer — same invitation, one element instead of a whole
+   section. Not present on the contact page itself, where it would link to the
+   page you are already reading; the empty third track keeps the pictograms
+   centred there all the same. */
 .foot__cta {
-  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  justify-self: end;
   color: rgba(251, 251, 249, 0.62);
+  /* Nudged down by half its own optical overshoot: the arrow's stroke sits
+     above the cap line, so an exact baseline match reads as too high. */
+  padding-bottom: 1px;
 }
 .foot__cta:hover { color: #fff; }
-.foot__col { display: grid; gap: 0.55rem; align-content: start; }
-.foot__col .label { margin-bottom: 0.5rem; }
+
+/* On a phone the three items cannot share a row — the logo alone is ~110px and
+   the link ~130px of tracked caps. Stacked left, each on its own line. */
+@media (max-width: 47.999rem) {
+  .foot__top {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    justify-items: start;
+    gap: 1.5rem;
+  }
+  .foot__cta { justify-self: start; }
+}
+
+/* Grid, not flex with space-between: the city has to sit on the centre of the
+   page, and space-between only centres the middle item when the outer two
+   happen to be the same width. */
 .foot__bottom {
   border-top: 1px solid rgba(251,251,249,0.14);
-  padding-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem 1.75rem;
-  justify-content: space-between;
+  padding-top: 1.1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
+  gap: 0.5rem 1.75rem;
+}
+.foot__bottom > :nth-child(2) { text-align: center; }
+.foot__bottom > :nth-child(3) { text-align: right; }
+@media (max-width: 47.999rem) {
+  .foot__bottom { grid-template-columns: minmax(0, 1fr); }
+  .foot__bottom > :nth-child(2),
+  .foot__bottom > :nth-child(3) { text-align: left; }
 }
 .foot__bottom .small { color: rgba(251,251,249,0.4); }
 
