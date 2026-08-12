@@ -111,7 +111,10 @@ window.DK_EN = {
   "f.msg": "Your message",
   "f.msg.p": "A few lines will do.",
   "f.submit": "Send",
-  "f.sent": "Thank you — your enquiry has reached us. We will reply within two working days.",
+  "f.sending": "Sending…",
+  "f.sent": "Thank you, your enquiry has reached us. We will reply within two working days.",
+  "f.error": "The message could not be sent. You can write to info@demirozkoc.com directly.",
+  "f.kvkk": "The details you give are used only to reply to your enquiry and are not shared with third parties.",
 
   /* ========================================================================
      Zabjelo Community Centre

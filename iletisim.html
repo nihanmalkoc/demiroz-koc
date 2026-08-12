@@ -104,7 +104,31 @@
       <div class="contact-box" data-reveal>
         <h1 class="h2" data-i18n="contact.title">Bize Ulaşın</h1>
 
-        <form class="form-grid" id="enquiry" novalidate>
+        <!-- Gonderim FormSubmit uzerinden (formsubmit.co). Neden dis servis:
+             taslak GitHub Pages'te duruyor, orada PHP/ASP.NET calismaz. Bu
+             adres hem GitHub Pages'te hem de site isimtescil'e tasindiginda
+             calisir. Sunucu tarafi bir betige gecilirse yalniz bu iki satir
+             degisir: action/data-endpoint.
+
+             ONEMLI: ilk gonderimde formsubmit.co, info@demirozkoc.com adresine
+             bir onay postasi yollar; icindeki baglantiya tiklanana kadar
+             mesajlar iletilmez. Bir kez kendiniz gonderip onaylayin.
+
+             action ayrica JS kapaliyken de calisiyor: o durumda formsubmit'in
+             kendi tesekkur sayfasina gidilir, mesaj kaybolmaz. -->
+        <form class="form-grid" id="enquiry" novalidate
+              method="POST"
+              action="https://formsubmit.co/info@demirozkoc.com"
+              data-endpoint="https://formsubmit.co/ajax/info@demirozkoc.com">
+
+          <!-- FormSubmit ayarlari -->
+          <input type="hidden" name="_subject" value="demirozkoc.com — yeni iletişim formu">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <!-- Bal kupu: gorunmez, insan doldurmaz. Icinde bir sey varsa
+               FormSubmit gonderiyi spam sayip atiyor. -->
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+
           <label class="field">
             <span class="label" data-i18n="f.email">E-posta</span>
             <input type="email" name="email" required autocomplete="email" data-i18n-ph="f.email.p" placeholder="siz@ornek.com">
@@ -126,6 +150,10 @@
               <svg viewBox="0 0 24 8" width="24" aria-hidden="true" style="overflow:visible"><line x1="0" y1="4" x2="20" y2="4" stroke="currentColor" stroke-width="1"/><polyline points="16,0.5 20,4 16,7.5" fill="none" stroke="currentColor" stroke-width="1"/></svg>
             </button>
             <p class="small form-note" id="formNote" hidden></p>
+            <!-- Kisisel veri toplayan bir form icin yasal olarak gerekli olan
+                 aydinlatma satiri. Bu metin bir taslak — kendi KVKK metniniz
+                 varsa onunla degistirin. -->
+            <p class="small" style="margin-top:1rem" data-i18n="f.kvkk">Verdiğiniz bilgiler yalnızca başvurunuza yanıt vermek için kullanılır, üçüncü kişilerle paylaşılmaz.</p>
           </div>
         </form>
       </div>

@@ -506,31 +506,66 @@
   })();
 
   /* ----------------------------------------------------------------------
-     Contact form — front-end only.
-     Replace the handler below with your real endpoint (Formspree, Netlify
-     Forms, your own PHP/API) when the site goes live.
+     Contact form.
+     Posts to the address in the form's data-endpoint (FormSubmit's AJAX
+     endpoint) so the confirmation appears in place rather than on a third
+     party's thank-you page. The form also carries a plain `action`, so with
+     JavaScript off the browser submits it normally and no message is lost —
+     this handler only takes over when it can actually do the work.
+
+     Moving to a server-side script on the studio's own hosting later means
+     changing two attributes in iletisim.html, nothing here.
      ---------------------------------------------------------------------- */
   (function contactForm() {
     var form = doc.getElementById('enquiry');
     if (!form) return;
 
+    var note = doc.getElementById('formNote');
+    var button = form.querySelector('button[type="submit"]');
+    var endpoint = form.getAttribute('data-endpoint');
+
+    /* No endpoint, or no fetch to reach it with: leave the browser's own submit
+       alone rather than swallowing the message. */
+    if (!endpoint || typeof window.fetch !== 'function') return;
+
+    var TR = {
+      sending: 'Gönderiliyor…',
+      sent: 'Teşekkürler, mesajınız bize ulaştı. İki iş günü içinde yanıtlayacağız.',
+      error: 'Mesaj gönderilemedi. Doğrudan info@demirozkoc.com adresine yazabilirsiniz.'
+    };
+
+    function say(state, colour) {
+      if (!note) return;
+      var en = (window.DK_EN || {})['f.' + state];
+      note.textContent = doc.documentElement.lang === 'en' && en ? en : TR[state];
+      note.style.color = colour;
+      /* The note starts hidden so it reserves no space before it has anything to
+         say; showing it is part of sending. */
+      note.hidden = false;
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
 
-      var note = doc.getElementById('formNote');
-      if (note) {
-        var key = 'f.sent';
-        var en = (window.DK_EN || {})[key];
-        note.textContent = doc.documentElement.lang === 'en' && en
-          ? en
-          : 'Teşekkürler — mesajınız bize ulaştı. İki iş günü içinde yanıtlayacağız.';
-        note.style.color = 'var(--blue)';
-        /* The note starts hidden so it reserves no space on a page sized to fit
-           one screen; showing it is part of sending. */
-        note.hidden = false;
-      }
-      form.reset();
+      if (button) button.disabled = true;
+      say('sending', 'var(--ink-55)');
+
+      window.fetch(endpoint, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form)
+      }).then(function (response) {
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        say('sent', 'var(--blue)');
+        form.reset();
+      })['catch'](function () {
+        /* Full ink rather than the muted default: the visitor has to notice that
+           the message did not go, and read the address to use instead. */
+        say('error', 'var(--ink)');
+      }).then(function () {
+        if (button) button.disabled = false;
+      });
     });
   })();
 
