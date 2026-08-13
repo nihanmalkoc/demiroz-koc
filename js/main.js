@@ -530,7 +530,7 @@
 
     var TR = {
       sending: 'Gönderiliyor…',
-      sent: 'Teşekkürler, mesajınız bize ulaştı. İki iş günü içinde yanıtlayacağız.',
+      sent: 'Teşekkürler, mesajınız bize ulaştı.',
       error: 'Mesaj gönderilemedi. Doğrudan info@demirozkoc.com adresine yazabilirsiniz.'
     };
 

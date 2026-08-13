@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>İletişim | Demiröz &amp; Koç</title>
-<meta name="description" content="Demiröz &amp; Koç ile iletişime geçin. Proje başvuruları, iş birlikleri ve stüdyo adresi.">
+<meta name="description" content="Demiröz &amp; Koç ile iletişime geçin: e-posta, telefon, stüdyo adresi ve mesaj formu.">
 <!-- ONIZLEME: icerik yer tutucu oldugu surece arama motorlarina kapali.
      Yayina cikarken bu satiri SILIN. -->
 <meta name="robots" content="noindex, nofollow">
@@ -150,10 +150,13 @@
               <svg viewBox="0 0 24 8" width="24" aria-hidden="true" style="overflow:visible"><line x1="0" y1="4" x2="20" y2="4" stroke="currentColor" stroke-width="1"/><polyline points="16,0.5 20,4 16,7.5" fill="none" stroke="currentColor" stroke-width="1"/></svg>
             </button>
             <p class="small form-note" id="formNote" hidden></p>
-            <!-- Kisisel veri toplayan bir form icin yasal olarak gerekli olan
-                 aydinlatma satiri. Bu metin bir taslak — kendi KVKK metniniz
-                 varsa onunla degistirin. -->
-            <p class="small" style="margin-top:1rem" data-i18n="f.kvkk">Verdiğiniz bilgiler yalnızca başvurunuza yanıt vermek için kullanılır, üçüncü kişilerle paylaşılmaz.</p>
+            <!-- KVKK aydinlatma satiri. "Ucuncu kisilerle paylasilmaz" ibaresi
+                 bilerek yok: form formsubmit.co uzerinden geciyor, yani mesaj
+                 teknik olarak bir ucuncu tarafin sunucusuna ugruyor. Gonderim
+                 kendi sunucunuza tasinirsa o cumle dogru hale gelir ve
+                 eklenebilir. Tam aydinlatma metniniz olursa buraya baglanti
+                 verilmeli. -->
+            <p class="small" style="margin-top:1rem" data-i18n="f.kvkk">Gönderdiğiniz bilgiler yalnızca mesajınıza yanıt vermek için kullanılır.</p>
           </div>
         </form>
       </div>

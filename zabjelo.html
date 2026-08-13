@@ -78,20 +78,24 @@
     <p class="label" data-reveal><span class="num">01</span> &nbsp; Podgorica, <span data-i18n="z.country">Karadağ</span>, 2026</p>
     <div class="page-head__row page-head__row--top" style="margin-top:1.5rem">
       <h1 class="h1"><span data-reveal-mask><span data-i18n="z.title">Zabjelo Kültür ve Toplum Merkezi</span></span></h1>
-
-      <!-- Proje künyesi. Arsa ve inşaat alanı satirlari kaldirildi: rakamlar
-           yarisma raporunda gecmiyor ve bos bir alan, olmayan bilgiyi ilan
-           etmekten baska is yapmiyordu. Uydurmak yerine satir yok. Sayilar
-           gelirse geri eklenir; s.site / s.gfa ceviri anahtarlari duruyor,
-           diger alti projede kullaniliyor. -->
+      <!-- Proje künyesi, VERI/zabjelo community centre künye.pdf dosyasindan
+           birebir alindi; deger, sira ve yazim degistirilmedi. -->
       <dl class="spec" data-reveal data-reveal-delay="1">
         <div class="spec__row">
           <dt class="label" data-i18n="s.func">İşlev</dt>
-          <dd data-i18n="s.func.v">Kültür ve toplum merkezi: sağlık birimi, çok amaçlı salon, gençlik ve yaşlılar kulüpleri</dd>
+          <dd data-i18n="s.func.v">Kültür, Sosyal, Ofis</dd>
         </div>
         <div class="spec__row">
           <dt class="label" data-i18n="s.loc">Konum ve Tarih</dt>
-          <dd data-i18n="s.loc.v">Zabjelo, Podgorica, Karadağ, 2026</dd>
+          <dd data-i18n="s.loc.v">Podgorica, Karadağ, 2026</dd>
+        </div>
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.site">Arsa Alanı</dt>
+          <dd>3.292 m²</dd>
+        </div>
+        <div class="spec__row">
+          <dt class="label" data-i18n="s.gfa">İnşaat Alanı</dt>
+          <dd>19.000 m²</dd>
         </div>
         <div class="spec__row">
           <dt class="label" data-i18n="s.status">Durum</dt>
@@ -99,7 +103,7 @@
         </div>
         <div class="spec__row">
           <dt class="label" data-i18n="s.team">Ekip</dt>
-          <dd>İrem Demiröz Koç, Burak Koç</dd>
+          <dd>Burak Koç, Mahir Ok</dd>
         </div>
       </dl>
     </div>
@@ -113,112 +117,39 @@
     <img src="assets/img/zabjelo/cover.jpg" alt="Zabjelo Kültür ve Toplum Merkezi — kavşak köşesinden sokak seviyesinde görünüm" fetchpriority="high">
   </figure>
 
-  <!-- ===================== VAZIYET + PASAJ =====================
-       Iki bolum yan yana: solda Vaziyet Planı Kararları metni ve altinda
-       vaziyet plani, sagda Pasaj Kurgusu metni ve altinda kutle gelisim
-       dizisi. .aside-pair kullaniliyor (.text-pair degil): text-pair satirlari
-       subgrid ve kolon basina iki cocuk bekliyor, burada uc var —
-       etiket, metin, gorsel. Ustten hizali, yani iki kolonun yuksekligi
-       birbirini surüklemiyor. Bolum numaralari kaldirildi: yan yana duran iki
-       etikete sirali numara vermek yaniltici olurdu. -->
+  <!-- ===================== TASARIM YAKLASIMI + VAZIYET PLANI =====================
+       Solda kunye PDF'indeki sekiz tasarim kriteri, girisin altinda alt alta;
+       sagda vaziyet plani. Kriter metinleri birebir, yalniz madde isaretleri
+       kaldirildi. -->
   <section class="section shell" style="padding-top:clamp(3rem,7vh,5rem)">
     <div class="aside-pair">
 
       <div>
-        <p class="label label--ink" data-reveal data-i18n="z.c3.label">Vaziyet Planı Kararları</p>
-        <div style="margin-top:1.1rem">
-          <p class="body-text" data-reveal data-i18n="z.c3.p1">Doğu Aksı (Vojvode Ilije Plamenca Bulvarı): Bu aks, yapının ana yaya ve toplu taşıma erişim yüzü olarak kurgulandı. Bulvar sınırındaki geniş çekme mesafesi, projenin "vitrini" niteliğinde nitelikli bir peyzaj alanı olarak tasarlandı. Bu cepheden, üst kat fonksiyonlarına hizmet eden lobi girişinin yanı sıra birinci kata doğrudan bağlanan bir kamusal merdiven yer alıyor. Sağlık birimlerine bağlı eczane ve pediatri bölümlerinin bağımsız girişleri de bu bulvar cephesinden sağlandı.</p>
-          <p class="body-text" data-reveal data-i18n="z.c3.p2">Güney Aksı (Ulica Ksenije Cicvarić): Yapıya araçla ulaşım, lojistik servis ve yanaşma stratejileri için bu sokak referans alındı. Sağlık merkezinin ana girişi bu cephede konumlandırılarak bir araç indirme-bindirme alanı ve devamında kapalı otopark girişi düzenlendi. Sokak, aynı zamanda tüm işlevlerin servis ve lojistik bağlantılarını organize ediyor.</p>
-        </div>
-
-        <!-- .dwg-pair YOK: bu figur bir kolonun icinde. dwg-pair 56rem ustunde
-             iki kolona bolunur ve tek kalan cizimi yarim genislikte ortalar —
-             kolon icinde bu, plani 150 px'e dusuruyordu. Duz figure, plaka
-             kolonun tam genisligini aliyor. -->
-        <figure class="fig" style="margin-top:clamp(1.75rem,4vw,2.75rem)" data-reveal>
-          <div class="plate"><img src="assets/img/zabjelo/dwg-site.jpg" alt="Vaziyet planı 1/250" loading="lazy"></div>
-          <figcaption class="small"><span class="num">01</span><span data-i18n="z.cap.site">Vaziyet planı — 1/250</span></figcaption>
-        </figure>
-      </div>
-
-      <div>
-        <p class="label label--ink" data-reveal data-reveal-delay="1" data-i18n="z.c4.label">Pasaj Kurgusu</p>
-        <div style="margin-top:1.1rem">
-          <p class="body-text" data-reveal data-reveal-delay="1" data-i18n="z.c4.p1">Yoğun bina programı nedeniyle zemin katta geniş kamusal boşluklar oluşturulamıyordu. Söz konusu mekânsal kısıt, kamusal alanın birinci kata taşınması fikrini doğurdu. Vojvode Ilije Plamenca Bulvarı ile Ulica Ksenije Cicvarić Sokağı, tasarlanan kamusal merdivenler vasıtasıyla birinci katta bir "pasaj" mantığıyla birbirine bağlanıyor.</p>
-          <p class="body-text" data-reveal data-reveal-delay="1" data-i18n="z.c4.p2">Kurgulanan bu düşey ve yatay aks, yapının kentle ve yakın çevresiyle kurduğu diyaloğu üst düzeye çıkarmayı hedefliyor. İçine kapanık bir kütle yerine dışa dönük, dinamik ve geçirgen bir mimari üretme hedefi doğrultusunda, iki sokak yapının kalbinde bir araya getirildi.</p>
-        </div>
-
-        <div style="margin-top:clamp(1.75rem,4vw,2.75rem)">
-          <p class="label label--ink" data-reveal data-i18n="z.c2.label">Kütle Gelişimi</p>
-
-          <div class="massfilm" id="massfilm" style="margin-top:1.1rem" data-reveal>
-            <div class="massfilm__stage">
-              <span class="massfilm__step" aria-hidden="true"><span class="n">01</span><sub>/08</sub></span>
-              <img src="assets/img/zabjelo/mass-a.jpg" alt="Kütle gelişimi adım 1" class="is-on">
-              <img src="assets/img/zabjelo/mass-b.jpg" alt="Kütle gelişimi adım 2" loading="lazy">
-              <img src="assets/img/zabjelo/mass-c.jpg" alt="Kütle gelişimi adım 3" loading="lazy">
-              <img src="assets/img/zabjelo/mass-d.jpg" alt="Kütle gelişimi adım 4" loading="lazy">
-              <img src="assets/img/zabjelo/mass-e.jpg" alt="Kütle gelişimi adım 5" loading="lazy">
-              <img src="assets/img/zabjelo/mass-f.jpg" alt="Kütle gelişimi adım 6" loading="lazy">
-              <img src="assets/img/zabjelo/mass-g.jpg" alt="Kütle gelişimi adım 7" loading="lazy">
-              <img src="assets/img/zabjelo/mass-h.jpg" alt="Kütle gelişimi adım 8" loading="lazy">
-            </div>
-
-            <div class="massfilm__bar">
-              <button class="massfilm__play" type="button" aria-pressed="true">
-                <span class="glyph" aria-hidden="true"></span>
-                <span data-i18n="z.mass.toggle">Oynat / Durdur</span>
-              </button>
-
-              <div class="massfilm__steps" role="group" aria-label="Kütle gelişim adımları">
-                <button type="button" aria-pressed="true"><span class="num">01</span></button>
-                <button type="button" aria-pressed="false"><span class="num">02</span></button>
-                <button type="button" aria-pressed="false"><span class="num">03</span></button>
-                <button type="button" aria-pressed="false"><span class="num">04</span></button>
-                <button type="button" aria-pressed="false"><span class="num">05</span></button>
-                <button type="button" aria-pressed="false"><span class="num">06</span></button>
-                <button type="button" aria-pressed="false"><span class="num">07</span></button>
-                <button type="button" aria-pressed="false"><span class="num">08</span></button>
-              </div>
-            </div>
-          </div>
+        <p class="label label--ink" data-reveal data-i18n="z.c1.label">Tasarım Yaklaşımı</p>
+        <p class="body-text" style="margin-top:1.1rem" data-reveal data-i18n="z.c1.lead">Projenin ana tasarım kriterleri şu şekilde belirlenmiştir:</p>
+        <div class="crit" data-reveal data-reveal-delay="1">
+        <p class="body-text" data-i18n="z.c1.i1">Mekansal Dağılım: Bina programını arazi bütününe uyumlu, dengeli ve optimize edilmiş bir biçimde dağıtmak.</p>
+        <p class="body-text" data-i18n="z.c1.i2">Kamusal Kimlik: Yapının kamusal niteliği gereği; dışa dönük, hareketli ve dinamik bir kütle ile cephe plastiği üretmek; davetkar bir mimari dil oluşturmak.</p>
+        <p class="body-text" data-i18n="z.c1.i3">Fonksiyonel Akış: Farklı işlevlerin birbirini engellemeden, işletme konforu yüksek bir ahenk içinde çalışmasını sağlamak.</p>
+        <p class="body-text" data-i18n="z.c1.i4">Düşey Sirkülasyon: Kamusal sirkülasyonu ve yaya hareketini sadece zemin katla sınırlamayıp, üst katlara da etkin bir biçimde taşımak.</p>
+        <p class="body-text" data-i18n="z.c1.i5">Kesintisiz Yeşil Dokusu: Peyzajı sadece zemin kat düzleminde bırakmayıp, kat bahçeleri ve teraslar aracılığıyla üst kotlara taşımak; yeşil sürekliliğini tüm bina çeperinde hissettirmek.</p>
+        <p class="body-text" data-i18n="z.c1.i6">Sürdürülebilirlik ve Yönelim: Mikroklimatik verileri ve bina yönelimini referans alan cephe tasarımlarıyla pasif sürdürülebilirlik ilkelerini hayata geçirmek.</p>
+        <p class="body-text" data-i18n="z.c1.i7">İç Mekan Kurgusu: Tasarlanan atriumlar, galeri boşlukları ve iç bahçelerle kullanıcı-mekan ilişkisini güçlendirirken, yapının doğal havalandırma ve aydınlatma performansını (enerji verimliliğini) desteklemek.</p>
+        <p class="body-text" data-i18n="z.c1.i8">Canlı Kamusal Alan: Nitelikli bir peyzaj tasarımı ile bina çeperinin gün boyu yaşayan, aktif bir kamusal odak noktası haline gelmesini sağlamak.</p>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- ===================== 2. RENDER =====================
-       Eski hero. Kapak renderi yukari alininca bu gorsel bosta kalmisti;
-       sirada ilk buyuk render olarak burada. Kirpilmiyor: kendi orani
-       (16/9) korunuyor, yoksa kavsak ya da bina ustu kesilirdi. -->
-  <figure class="bleed" data-reveal>
-    <img src="assets/img/zabjelo/hero.jpg" alt="Bulvar kavşağı ve çevre doku ile birlikte genel görünüm" loading="lazy" style="aspect-ratio:16/9">
-  </figure>
-
-  <!-- ===================== BUYUK RENDER =====================
-       Tam kenar. Bu render daha once hic yerlestirilmemisti
-       (assets/img/zabjelo/boulevard.jpg). -->
-  <figure class="bleed" data-reveal>
-    <img src="assets/img/zabjelo/boulevard.jpg" alt="Bulvar cephesi" loading="lazy" style="aspect-ratio:2.2/1">
-  </figure>
-
-  <!-- ===================== RENDER ===================== -->
-  <section class="section shell" style="padding-top:clamp(2.5rem,6vh,4rem)">
-    <div class="dwg-pair">
-      <figure class="fig" data-reveal>
-        <img src="assets/img/zabjelo/aerial.jpg" alt="Havadan genel görünüm" loading="lazy">
+      <figure class="fig" data-reveal data-reveal-delay="1">
+        <div class="plate"><img src="assets/img/zabjelo/dwg-site.jpg" alt="Vaziyet planı 1/250" loading="lazy"></div>
+        <figcaption class="small"><span class="num">01</span><span data-i18n="z.cap.site">Vaziyet planı — 1/250</span></figcaption>
       </figure>
+
     </div>
   </section>
 
-  <!-- ===================== PLANLAR + FONKSIYON DIYAGRAMLARI =====================
-       Fonksiyon Dağılımı paragraflari kaldirildi; bolum artik yalnizca planlar
-       ve diyagramlardan olusuyor. Etiket raporun kendi bolum adi. -->
+  <!-- ===================== PLANLAR ===================== -->
   <section class="section shell" style="padding-top:0">
-    <p class="label label--ink" data-reveal data-i18n="z.c5.label">Fonksiyon Dağılımı</p>
-
-    <div class="dwg-pair" style="margin-top:1.75rem">
+    <div class="dwg-pair">
       <figure class="fig" data-reveal>
         <div class="plate"><img src="assets/img/zabjelo/dwg-plan-00.jpg" alt="Zemin kat planı" loading="lazy"></div>
         <figcaption class="small"><span class="num">02</span><span data-i18n="z.cap.plan00">Zemin kat planı.</span></figcaption>
@@ -228,8 +159,57 @@
         <figcaption class="small"><span class="num">03</span><span data-i18n="z.cap.plan01">Birinci kat planı.</span></figcaption>
       </figure>
     </div>
+  </section>
 
-    <div class="dwg-pair">
+  <!-- ===================== RENDER ===================== -->
+  <figure class="bleed" data-reveal>
+    <img src="assets/img/zabjelo/hero.jpg" alt="Bulvar kavşağı ve çevre doku ile birlikte genel görünüm" loading="lazy" style="aspect-ratio:16/9">
+  </figure>
+
+  <!-- ===================== KUTLE GELISIMI ===================== -->
+  <section class="section shell" style="padding-top:clamp(2.5rem,6vh,4rem)">
+    <p class="label label--ink" data-reveal data-i18n="z.c2.label">Kütle Gelişimi</p>
+    <div style="margin-top:1.1rem">
+        <div class="massfilm" id="massfilm" data-reveal>
+          <div class="massfilm__stage">
+            <span class="massfilm__step" aria-hidden="true"><span class="n">01</span><sub>/08</sub></span>
+            <img src="assets/img/zabjelo/mass-a.jpg" alt="Kütle gelişimi adım 1" class="is-on">
+            <img src="assets/img/zabjelo/mass-b.jpg" alt="Kütle gelişimi adım 2" loading="lazy">
+            <img src="assets/img/zabjelo/mass-c.jpg" alt="Kütle gelişimi adım 3" loading="lazy">
+            <img src="assets/img/zabjelo/mass-d.jpg" alt="Kütle gelişimi adım 4" loading="lazy">
+            <img src="assets/img/zabjelo/mass-e.jpg" alt="Kütle gelişimi adım 5" loading="lazy">
+            <img src="assets/img/zabjelo/mass-f.jpg" alt="Kütle gelişimi adım 6" loading="lazy">
+            <img src="assets/img/zabjelo/mass-g.jpg" alt="Kütle gelişimi adım 7" loading="lazy">
+            <img src="assets/img/zabjelo/mass-h.jpg" alt="Kütle gelişimi adım 8" loading="lazy">
+          </div>
+           <div class="massfilm__bar">
+            <button class="massfilm__play" type="button" aria-pressed="true">
+              <span class="glyph" aria-hidden="true"></span>
+              <span data-i18n="z.mass.toggle">Oynat / Durdur</span>
+            </button>
+             <div class="massfilm__steps" role="group" aria-label="Kütle gelişim adımları">
+              <button type="button" aria-pressed="true"><span class="num">01</span></button>
+              <button type="button" aria-pressed="false"><span class="num">02</span></button>
+              <button type="button" aria-pressed="false"><span class="num">03</span></button>
+              <button type="button" aria-pressed="false"><span class="num">04</span></button>
+              <button type="button" aria-pressed="false"><span class="num">05</span></button>
+              <button type="button" aria-pressed="false"><span class="num">06</span></button>
+              <button type="button" aria-pressed="false"><span class="num">07</span></button>
+              <button type="button" aria-pressed="false"><span class="num">08</span></button>
+            </div>
+          </div>
+  </section>
+
+  <!-- ===================== RENDER ===================== -->
+  <figure class="bleed" data-reveal>
+    <img src="assets/img/zabjelo/boulevard.jpg" alt="Bulvar cephesi" loading="lazy" style="aspect-ratio:2.2/1">
+  </figure>
+
+  <!-- ===================== FONKSIYON DAGILIMI ===================== -->
+  <section class="section shell" style="padding-top:clamp(2.5rem,6vh,4rem)">
+    <p class="label label--ink" data-reveal data-i18n="z.c5.label">Fonksiyon Dağılımı</p>
+
+    <div class="dwg-pair" style="margin-top:1.75rem">
       <figure class="fig" data-reveal>
         <div class="plate plate--pad"><img src="assets/img/zabjelo/dia-function.jpg" alt="İşlev diyagramı" loading="lazy"></div>
         <figcaption class="small"><span class="num">04</span><span data-i18n="z.cap.function">İşlev diyagramı.</span></figcaption>
@@ -240,7 +220,7 @@
       </figure>
     </div>
 
-    <div class="dwg-pair">
+    <div class="dwg-pair dwg-pair--sheet" style="margin-top:clamp(1.5rem,3vw,2.5rem)">
       <figure class="fig" data-reveal>
         <div class="plate"><img src="assets/img/zabjelo/dia-section-persp.jpg" alt="Kesit perspektif — uzun kesit" loading="lazy"></div>
         <figcaption class="small"><span class="num">06</span><span data-i18n="z.cap.sectionpersp">Kesit perspektif — uzun kesit.</span></figcaption>
@@ -248,10 +228,13 @@
     </div>
   </section>
 
-  <!-- ===================== RENDER ===================== -->
+  <!-- ===================== RENDERLAR ===================== -->
   <section class="section shell" style="padding-top:0">
-    <div class="dwg-pair">
+    <div class="dwg-pair dwg-pair--uniform">
       <figure class="fig" data-reveal>
+        <img src="assets/img/zabjelo/aerial.jpg" alt="Havadan genel görünüm" loading="lazy">
+      </figure>
+      <figure class="fig" data-reveal data-reveal-delay="1">
         <img src="assets/img/zabjelo/passage.jpg" alt="Kamusal merdiven ve pasaj" loading="lazy">
       </figure>
     </div>
@@ -260,40 +243,32 @@
   <!-- ===================== IC MEKAN ===================== -->
   <section class="section shell" style="padding-top:0">
     <p class="label label--ink" data-reveal data-i18n="z.c6.label">İç Mekân</p>
-
-    <div class="gallery" style="margin-top:1.75rem">
-      <figure class="is-wide" data-reveal>
+    <div class="dwg-pair dwg-pair--uniform" style="margin-top:1.75rem">
+      <figure class="fig" data-reveal>
         <img src="assets/img/zabjelo/int-atrium.jpg" alt="Atrium ve kat bahçeleri" loading="lazy">
       </figure>
-      <figure data-reveal>
+      <figure class="fig" data-reveal data-reveal-delay="1">
         <img src="assets/img/zabjelo/int-foyer.jpg" alt="Çok amaçlı salon fuayesi" loading="lazy">
       </figure>
-      <figure data-reveal data-reveal-delay="1">
+      <figure class="fig" data-reveal>
         <img src="assets/img/zabjelo/int-hall.jpg" alt="Çok amaçlı salon" loading="lazy">
       </figure>
-      <figure data-reveal>
+      <figure class="fig" data-reveal data-reveal-delay="1">
         <img src="assets/img/zabjelo/int-stair.jpg" alt="İç sirkülasyon" loading="lazy">
       </figure>
-      <figure data-reveal data-reveal-delay="1">
+      <figure class="fig" data-reveal>
         <img src="assets/img/zabjelo/int-social.jpg" alt="Ortak sosyal alan" loading="lazy">
       </figure>
-    </div>
-  </section>
-
-  <!-- ===================== MAKET ===================== -->
-  <section class="section shell" style="padding-top:0">
-    <div class="dwg-pair">
-      <figure class="fig" data-reveal>
+      <figure class="fig" data-reveal data-reveal-delay="1">
         <img src="assets/img/zabjelo/model.jpg" alt="Maket" loading="lazy">
       </figure>
     </div>
   </section>
 
-  <!-- ===================== KAPANIS GORSELI ===================== -->
+  <!-- ===================== KAPANIS RENDERI ===================== -->
   <figure class="bleed" data-reveal>
     <img src="assets/img/zabjelo/terraces.jpg" alt="Teraslar ve kat bahçeleri, akşam" loading="lazy" style="aspect-ratio:2.4/1">
   </figure>
-
 
   <!-- ===================== PAGER ===================== -->
   <nav class="pager" aria-label="Proje gezinmesi">

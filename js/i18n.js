@@ -86,7 +86,7 @@ window.DK_EN = {
 
   /* --- Studio --- */
   "studio.label": "Studio",
-  "studio.p1": "Demiröz &amp; Koç Mimarlık was founded and began work in Ankara in 2026. Young and dynamic, the practice is able to work across every field of architecture and to organise itself quickly on projects of very different scales, offering a broad range of services from the scale of urban design to the scale of architecture, and from interior design through to construction.",
+  "studio.p1": "Demiröz &amp; Koç Mimarlık was founded by Burak Koç in Ankara in 2026 and began work there. Young and dynamic, the practice is able to work across every field of architecture and to organise itself quickly on projects of very different scales, offering a broad range of services from the scale of urban design to the scale of architecture, and from interior design through to construction.",
   "studio.p2": "Demiröz &amp; Koç Mimarlık brings the same rigour to architectural projects of widely differing use and character — housing, mixed use, hotels, educational buildings, social and cultural facilities, offices, retail buildings and interior design.",
 
   "studio.servLabel": "Fields of Work",
@@ -98,7 +98,8 @@ window.DK_EN = {
   "team.2.r": "Architect",
   /* Turkish has no gendered third-person pronoun, so the source text carries
      none; the English is written without one rather than inferring. */
-  "team.2.d": "Graduated from the Department of Architecture at Yıldız Technical University in 2013, then spent more than twelve years in leading Turkish architectural practices, taking on team and project management and entering a number of national architectural competitions with different teams. Completed the Master's programme in Architectural Design at Istanbul Technical University in 2019.",
+  "team.2.d": "Graduated from the Department of Architecture at Yıldız Technical University in 2013. After graduating, gained professional experience over more than twelve years in leading Turkish architectural practices, taking on team and project management in that time. Entered a number of national architectural competitions with different teams. Completed the Master's programme in Architectural Design at Istanbul Technical University in 2019.",
+  "team.2.d2": "As of 2026, continues to work within Demiröz &amp; Koç Mimarlık, the practice they founded.",
 
   /* --- Contact --- */
   "contact.title": "Get in Touch",
@@ -112,9 +113,9 @@ window.DK_EN = {
   "f.msg.p": "A few lines will do.",
   "f.submit": "Send",
   "f.sending": "Sending…",
-  "f.sent": "Thank you, your enquiry has reached us. We will reply within two working days.",
+  "f.sent": "Thank you, your message has reached us.",
   "f.error": "The message could not be sent. You can write to info@demirozkoc.com directly.",
-  "f.kvkk": "The details you give are used only to reply to your enquiry and are not shared with third parties.",
+  "f.kvkk": "The details you send are used only to reply to your message.",
 
   /* ========================================================================
      Zabjelo Community Centre
@@ -123,9 +124,9 @@ window.DK_EN = {
      ======================================================================== */
   /* --- Spec block beside the project title --- */
   "s.func": "Function",
-  "s.func.v": "Culture and community centre: healthcare unit, multi-purpose hall, youth and senior clubs",
+  "s.func.v": "Culture, Social, Office",
   "s.loc": "Location and Date",
-  "s.loc.v": "Zabjelo, Podgorica, Montenegro, 2026",
+  "s.loc.v": "Podgorica, Montenegro, 2026",
   "s.site": "Site Area",
   "s.gfa": "Gross Floor Area",
   "s.status": "Status",
@@ -135,17 +136,21 @@ window.DK_EN = {
   "z.country": "Montenegro",
   "z.title": "Zabjelo Community Centre",
 
+  "z.c1.label": "Design Approach",
+  "z.c1.lead": "The main design criteria of the project were set as follows:",
+  "z.c1.i1": "Spatial Distribution: to distribute the building programme across the whole of the site in a balanced and optimised way that suits it.",
+  "z.c1.i2": "Public Identity: given the public nature of the building, to produce an outward-looking, animated and dynamic mass and façade relief; to establish an inviting architectural language.",
+  "z.c1.i3": "Functional Flow: to let the different functions work together in a high-comfort harmony without obstructing one another.",
+  "z.c1.i4": "Vertical Circulation: not to confine public circulation and pedestrian movement to the ground floor alone, but to carry it effectively to the upper floors as well.",
+  "z.c1.i5": "Uninterrupted Green Fabric: not to leave the landscape on the ground-floor plane alone, but to carry it to the upper levels through floor gardens and terraces; to make green continuity felt around the whole perimeter of the building.",
+  "z.c1.i6": "Sustainability and Orientation: to put the principles of passive sustainability into practice through façade designs that take microclimatic data and the building's orientation as their reference.",
+  "z.c1.i7": "Interior Composition: while strengthening the relationship between user and space through the atria, galleries and interior gardens, to support the building's natural ventilation and daylighting performance (its energy efficiency).",
+  "z.c1.i8": "A Living Public Realm: through a considered landscape design, to make the perimeter of the building an active public focus that is alive throughout the day.",
   "z.c2.label": "Massing Development",
   "z.mass.toggle": "Play / Pause",
 
-  "z.c3.label": "Site Plan Decisions",
-  "z.c3.p1": "The East Axis (Vojvode Ilije Plamenca Boulevard): This axis is configured as the primary interface for pedestrian and public transit access. The generous setback along the boulevard is transformed into a high-quality landscape zone, serving as the project's public showcase. This facade accommodates the main lobby entrance servicing upper-floor functions, as well as a prominent public staircase leading directly to the first floor. Independent entrances for the pharmacy and pediatric units of the healthcare centre are integrated into this boulevard frontage.",
-  "z.c3.p2": "The South Axis (Ulica Ksenije Cicvarić): This street serves as the main reference point for vehicular access, logistics and drop-off strategies. The main entrance of the healthcare centre is positioned on this facade, organized alongside a dedicated drop-off lane that transitions into the underground parking entrance. This street also consolidates the service and logistical connections for all functions.",
   "z.cap.site": "Site plan — 1:250",
 
-  "z.c4.label": "The Passage",
-  "z.c4.p1": "Due to the high density of the building program, generating expansive public voids at the ground level was unfeasible. To overcome this spatial constraint, the design elevates the primary public space to the first floor. Vojvode Ilije Plamenca Boulevard and Ulica Ksenije Cicvarić Street are fluidly linked on the first floor through public staircases, adopting the typology of an urban passage.",
-  "z.c4.p2": "This synthesized vertical and horizontal axis aims to maximize the building's dialogue with the city and its immediate surroundings. In line with the vision of crafting an outward-looking, dynamic and permeable architecture rather than an introverted mass, the two street axes converge at the very heart of the structure.",
   "z.cap.plan00": "Ground floor plan.",
   "z.cap.plan01": "First floor plan — the passage level.",
 

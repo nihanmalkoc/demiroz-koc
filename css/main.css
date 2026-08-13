@@ -955,6 +955,13 @@ body[data-page="contact"] .contact-box .form-grid { max-width: none; }
   body[data-page="contact"] .contact-box .form-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
+/* Tasarim kriterleri: her madde kendi satirinda, alt alta. Paragraf araligi
+   (1.35em) sekiz madde icin fazlaydi — liste degil, sekiz ayri paragraf gibi
+   okunuyordu. Grid gap daha sik; .body-text'in kendi araligi burada kapatiliyor
+   yoksa ikisi ust uste binerdi. */
+.crit { display: grid; gap: 0.8em; margin-top: 1.1rem; }
+.crit .body-text + .body-text { margin-top: 0; }
+
 .map-frame {
   border: 1px solid var(--line);
   background: var(--paper-2);
